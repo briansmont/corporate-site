@@ -31,6 +31,10 @@ module.exports = {
     root: __dirname,
     alias: {
       Main: "app/components/Main.jsx",
+      About: "app/components/About.jsx",
+      Products: "app/components/Products.jsx",
+      Nav: "app/components/Nav.jsx",
+      Home: "app/components/Home.jsx",
       applicationStyles: 'app/styles/app.scss',
       jQuery: "node_modules/jquery/dist/jquery.min.js",
     },
