@@ -6,7 +6,7 @@ var About = React.createClass({
     return (
       <div className="comp-pad">
         <div className="row">
-          <img src="../images/capstone/philly-skyline-night.jpg" className="small-6 large-12 columns"></img>
+          <img src="/app/images/capstone/philly-skyline-night.jpg" className="small-6 large-12 columns"></img>
         </div>
         <h1 className="centered">About Us:</h1>
         
