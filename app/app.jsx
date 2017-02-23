@@ -7,6 +7,7 @@ var Main = require('Main');
 var About = require('About');
 var Products = require('Products');
 var Home = require('Home');
+var Contact = require('Contact');
 
 // load foundation
 //$(document).foundation();
@@ -20,6 +21,7 @@ ReactDOM.render(
     <Route path="/" component={Main}>
       <Route path="/about" component={About}/>
       <Route path="/products" component={Products}/>
+      <Route path="/contact" component={Contact}/>
       <IndexRoute component={Home}/>
     </Route>
   </Router>,

@@ -18,6 +18,16 @@ var Nav = React.createClass({
           <li>
             <Link to="/products" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Products</Link>
           </li>
+          <li>
+            <Link to="/contact" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Contact</Link>
+          </li>
+        </ul>
+      </div>
+      <div className="top-bar-right">
+        <ul className="menu">
+          <li>
+            <strong>Let us serve you!</strong>
+          </li>
         </ul>
       </div>
     </div>
