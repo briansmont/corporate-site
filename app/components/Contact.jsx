@@ -10,7 +10,7 @@ var Contact = React.createClass({
             <input autoFocus type="text" ref="fullName" placeholder="Enter Full Name"/>
             <input type="text" ref="email" placeholder="Email Address" />
             <input type="number" ref="phoneNumber" placeholder="Phone Number" />
-            <textarea ref="message" placeHolder="Let us know how we can help"></textarea>
+            <textarea ref="message" placeholder="Let us know how we can help"></textarea>
             <button className="button expanded">Submit!</button>
           </form>
         </div>
