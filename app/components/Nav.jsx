@@ -8,7 +8,7 @@ var Nav = React.createClass({
     <div className="top-bar">
       <div className="top-bar-left">
         <ul className="menu">
-          <li className="menu-text">Your Company Site</li>
+          <li className="menu-text">BSM Corp</li>
           <li>
             <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Home</IndexLink>
           </li>

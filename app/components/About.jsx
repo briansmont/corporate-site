@@ -1,12 +1,12 @@
 var React = require('react');
-var {Link, IndexLink} = require('react-router');
+var {Link} = require('react-router');
 
 var About = React.createClass({
   render: function() {
     return (
-      <div>
+      <div className="comp-pad">
         <div className="row">
-          <img src="../images/capstone/philly-skyline-night.jpg" className="small-6 large-8 columns"></img>
+          <img src="../images/capstone/philly-skyline-night.jpg" className="small-6 large-12 columns"></img>
         </div>
         <h1 className="centered">About Us:</h1>
         
@@ -21,7 +21,7 @@ var About = React.createClass({
         <p>Take a look at our <Link to="/products" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Products Catalog</Link> and we guarantee there's something for you!</p>
       
       
-        <p>Contact information link to exist here</p>
+        <p>If you have any questions or comments, you can reach us <Link to="/contact" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>here</Link> </p>
       </div>
     );
   }

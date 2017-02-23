@@ -3,7 +3,7 @@ var React = require('react');
 var Contact = React.createClass({
   render: function() {
     return (
-      <div>
+      <div className="comp-pad">
         <h1 className="centered">How can we help?</h1>
         <div className="small-centered small-11 medium-6 large-5">
           <form onSubmit={this.handleSubmit}>
