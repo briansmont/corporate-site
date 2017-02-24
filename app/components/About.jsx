@@ -1,13 +1,14 @@
 var React = require('react');
 var {Link} = require('react-router');
-// import skyline_image from './'
+const skyline_image = require("url-loader?limit=10000!../images/capstone/philly-skyline-night.jpg");
+
 
 var About = React.createClass({
   render: function() {
     return (
       <div className="comp-pad">
         <div className="row">
-          <img src="./app/images/capstone/philly-skyline-night.jpg" className="small-6 large-12 columns"></img>
+          <img src={skyline_image} className="small-6 large-12 columns"></img>
         </div>
         <h1 className="centered">About Us:</h1>
         
