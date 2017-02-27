@@ -4,21 +4,19 @@ var Faker = require('faker');
 var Products = React.createClass({
   renderCatalog: function() {
     var products = [];
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 8; i++) {
       var product = {
         name: Faker.commerce.productName(),
         price: Faker.commerce.price(),
       };
-      products.push(product);
-    }
-    for (var i = 0; i < products.length; i++) {
-      return (
+      products.push(
         <div>
-          <h5>{products[i].name}</h5>
-          <p>{products[i].price}</p>
-        </div>
+          Item: {product.name}, Price: {product.price}
+        </div>  
+        
       );
     }
+    return products;
   },
   
   
