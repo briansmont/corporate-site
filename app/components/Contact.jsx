@@ -4,8 +4,8 @@ var Contact = React.createClass({
   render: function() {
     return (
       <div className="comp-pad">
-        <h1 className="centered">How can we help?</h1>
         <div className="small-centered small-11 medium-6 large-5">
+          <h1>How can we help?</h1>
           <form onSubmit={this.handleSubmit}>
             <input autoFocus type="text" ref="fullName" placeholder="Enter Full Name"/>
             <input type="text" ref="email" placeholder="Email Address" />
