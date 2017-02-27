@@ -1,13 +1,24 @@
 var React = require('react');
 var Faker = require('faker');
 
+var catalog = [
+  {name: Faker.commerce.productName() , price: Faker.commerce.price() },
+  {name: Faker.commerce.productName() , price: Faker.commerce.price() },
+  {name: Faker.commerce.productName() , price: Faker.commerce.price() },
+  {name: Faker.commerce.productName() , price: Faker.commerce.price() },
+  {name: Faker.commerce.productName() , price: Faker.commerce.price() },
+  {name: Faker.commerce.productName() , price: Faker.commerce.price() },
+  {name: Faker.commerce.productName() , price: Faker.commerce.price() },
+  {name: Faker.commerce.productName() , price: Faker.commerce.price() },
+];
+
 var Products = React.createClass({
   renderCatalog: function() {
     var products = [];
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < catalog.length; i++) {
       var product = {
-        name: Faker.commerce.productName(),
-        price: Faker.commerce.price(),
+        name: catalog[i].name,
+        price: catalog[i].price,
       };
       products.push(
         <div>
