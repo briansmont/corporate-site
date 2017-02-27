@@ -13,7 +13,13 @@ var Home = React.createClass({
             <p>Our goal is to exceed your expectations, in both the short & long term. </p>
           </div>
         </div>
-        
+        <div>
+          <ul className="small-block-grid-3">
+            <li className="small-left"></li>
+            <li className="small-center"></li>
+            <li className="small-right"></li>
+          </ul>
+        </div>
         <div className="row">
           <div className="small-2 large-4 columns small-left"><p>One</p></div>
           <div className="small-4 large-4 columns"><p>Two</p></div>
