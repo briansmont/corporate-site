@@ -17,12 +17,12 @@ var Home = React.createClass({
             <p>Our team is here to help</p>
           </div>
         </div>
-        <div className="row">
+        <div className="row comp-pad">
           <div className="small-2 large-4 columns"><img src={clutter}></img></div>
           <div className="small-4 large-4 columns"><img src={dualMonitor}></img></div>
           <div className="small-6 large-4 columns"><img src={laptops}></img></div>
         </div>
-        <div className="row center-text">
+        <div className="row comp-pad center-text">
           <div className="small-2 large-4 columns"><strong>Better Organization</strong></div>
           <div className="small-4 large-4 columns"><strong>Higher Efficiency</strong></div>
           <div className="small-6 large-4 columns"><strong>Simplify Management</strong></div>
