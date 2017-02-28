@@ -1,20 +1,30 @@
 var React = require('react');
 var Faker = require('faker');
 
-var catalog = [
-  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.business()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.animals()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.fashion()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.nature()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.people()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.food()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.nightlife()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.sports()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.abstract()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.technics()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.transport()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.city()},
-];
+const awesome = require("url-loader?limit=10000!../images/capstone/awesome.jpeg");
+
+var catalog =[];
+for (var i = 0; i < 18; i++) {
+  catalog.push({name: Faker.commerce.productName(), price: Faker.commerce.price()});
+}
+
+// var catalog = [
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+// ];
 
 var Products = React.createClass({
   renderCatalog: function() {
@@ -23,14 +33,11 @@ var Products = React.createClass({
       var product = {
         name: catalog[i].name,
         price: catalog[i].price,
-        image: catalog[i].image,
       };
       products.push(
         <div className="column">
-          <p><strong>{product.name}:</strong> Price: ${product.price}</p> <img src={product.image} height="30%" width="30%" alt="product" className="comp-pad"></img><button className="button">Buy Now!</button>
+          <p><strong>{product.name}:</strong> for ${product.price}</p> <img src={awesome} height="30%" width="30%" alt="product" className="comp-pad"></img><button className="button">Buy Now!</button>
         </div>
-      
-        
       );
     }
     return products;
