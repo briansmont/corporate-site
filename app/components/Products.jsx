@@ -1,4 +1,6 @@
 var React = require('react');
+var InfiniteGrid = require('react-infinite-grid');
+
 var Faker = require('faker');
 
 var catalog = [
@@ -16,6 +18,10 @@ var catalog = [
   {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.city()},
 ];
 
+var items = [];
+for (var i = 0; i < 11; i++) {
+  items.push('This is #' + i);
+}
 var Products = React.createClass({
   renderCatalog: function() {
     var products = [];
@@ -43,6 +49,7 @@ var Products = React.createClass({
         <h1 className="center-text"><u>Products</u></h1>
         <div className="row small-up-1 medium-up-2 large-up-3">
           {this.renderCatalog()}
+          <InfiniteGrid itemClassName={"item"} entries={items}/>
         </div>
       </div>
     );
