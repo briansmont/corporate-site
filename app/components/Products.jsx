@@ -27,7 +27,7 @@ var Products = React.createClass({
       };
       products.push(
         <div className="column">
-          <p><strong>{product.name}:</strong> Price: ${product.price}</p> <img src={product.image} height="20%" width="20%" alt="product" className="comp-pad"></img><button className="button">Buy Now!</button>
+          <p><strong>{product.name}:</strong> Price: ${product.price}</p> <img src={product.image} height="30%" width="30%" alt="product" className="comp-pad"></img><button className="button">Buy Now!</button>
         </div>
       
         
