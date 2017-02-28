@@ -2,18 +2,18 @@ var React = require('react');
 var Faker = require('faker');
 
 var catalog = [
-  {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-  {name: Faker.commerce.productName(), price: Faker.commerce.price()},
+  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.business()},
+  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.animals()},
+  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.fashion()},
+  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.nature()},
+  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.people()},
+  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.food()},
+  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.nightlife()},
+  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.sports()},
+  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.abstract()},
+  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.technics()},
+  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.transport()},
+  {name: Faker.commerce.productName(), price: Faker.commerce.price(), image: Faker.image.city()},
 ];
 
 var Products = React.createClass({
@@ -23,10 +23,11 @@ var Products = React.createClass({
       var product = {
         name: catalog[i].name,
         price: catalog[i].price,
+        image: catalog[i].image,
       };
       products.push(
         <div className="row comp-pad">
-          <p>{product.name}: Price: ${product.price}</p> <button className="button">Buy Now!</button>
+          <p><strong>{product.name}:</strong> Price: ${product.price}</p> <img src={product.image} height="20%" width="20%" alt="product" className="comp-pad"></img><button className="button">Buy Now!</button>
         </div>  
         
       );
