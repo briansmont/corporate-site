@@ -23,13 +23,13 @@ var Products = React.createClass({
       var product = {
         name: catalog[i].name,
         price: catalog[i].price,
-        image: catalog[i].image,
+        // image: catalog[i].image,
       };
       products.push(
         <div className="row comp-pad">
-          <p><strong>{product.name}:</strong> Price: ${product.price}</p> <img src={product.image} height="20%" width="20%" alt="product" className="comp-pad"></img><button className="button">Buy Now!</button>
+          <p><strong>{product.name}:</strong> Price: ${product.price}</p> <button className="button">Buy Now!</button>
         </div>  
-        
+        // <img src={product.image} height="20%" width="20%" alt="product" className="comp-pad"></img>
       );
     }
     return products;
@@ -39,7 +39,11 @@ var Products = React.createClass({
     return (
       <div>
         <h1 className="center-text"><u>Products</u></h1>
-        {this.renderCatalog()}
+        <div class="row small-up-1 medium-up-2 large-up-3">
+          <div class="column">
+            {this.renderCatalog()}
+          </div>
+        </div>
       </div>
     );
   }
