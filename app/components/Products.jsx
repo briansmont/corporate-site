@@ -8,24 +8,6 @@ for (var i = 0; i < 18; i++) {
   catalog.push({name: Faker.commerce.productName(), price: Faker.commerce.price()});
 }
 
-// var catalog = [
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-//   {name: Faker.commerce.productName(), price: Faker.commerce.price()},
-// ];
-
 var Products = React.createClass({
   renderCatalog: function() {
     var products = [];
@@ -35,7 +17,7 @@ var Products = React.createClass({
         price: catalog[i].price,
       };
       products.push(
-        <div className="column">
+        <div className="column product-border">
           <p><strong>{product.name}:</strong> for ${product.price}</p> <img src={awesome} height="30%" width="30%" alt="product" className="comp-pad"></img><button className="button">Buy Now!</button>
         </div>
       );
