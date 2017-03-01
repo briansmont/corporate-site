@@ -39,6 +39,7 @@ module.exports = {
       YourAccount: "app/components/YourAccount.jsx",
       ProductList: "app/components/ProductList.jsx",
       Product: "app/components/Product.jsx",
+      AddProduct: "app/components/AddProduct.jsx",
       SearchProducts: "app/components/SearchProducts.jsx",
       actions: "app/actions/actions.jsx",
       applicationStyles: 'app/styles/app.scss',

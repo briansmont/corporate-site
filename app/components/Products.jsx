@@ -3,9 +3,11 @@ var uuid = require('node-uuid');
 
 var SearchProducts = require('SearchProducts');
 var ProductList = require('ProductList');
+var AddProduct = require('AddProduct');
+
+
 
 var Products = React.createClass({
-  
   getInitialState: function() {
     return {
       searchText: '',
@@ -59,6 +61,21 @@ var Products = React.createClass({
     };
   },
   
+  handleAddProduct: function(productName, productPrice) {
+    this.setState({
+      products: [
+       ...this.state.products,
+       {
+         id: uuid(),
+         item: productName,
+         price: productPrice
+       }
+        
+      ]
+    });
+  },
+  
+  
   handleSearch : function(searchText) {
     this.setState({
       searchText: searchText.toLowerCase(),
@@ -71,11 +88,12 @@ var Products = React.createClass({
     var {products} = this.state;
     
     return (
-      <div>
+      <div className="comp-pad">
         <h1 className="center-text"><u>Products</u></h1>
         <SearchProducts onSearch={this.handleSearch}/>
-        <div>
-          <ProductList products={products}/>
+        <ProductList products={products}/>
+        <div className="column small-centered small-11 medium-6 large-5">
+          <AddProduct onNewProduct={this.handleAddProduct}/>
         </div>
       </div>
     );
