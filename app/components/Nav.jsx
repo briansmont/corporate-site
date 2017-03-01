@@ -26,7 +26,7 @@ var Nav = React.createClass({
       <div className="top-bar-right">
         <ul className="menu">
           <li>
-            <strong>Let us serve you!</strong>
+            <Link to="/account" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Your Account</Link>
           </li>
         </ul>
       </div>

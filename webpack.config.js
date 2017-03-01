@@ -36,6 +36,7 @@ module.exports = {
       Nav: "app/components/Nav.jsx",
       Home: "app/components/Home.jsx",
       Contact: "app/components/Contact.jsx",
+      YourAccount: "app/components/YourAccount.jsx",
       applicationStyles: 'app/styles/app.scss',
       jQuery: "node_modules/jquery/dist/jquery.min.js",
     },
