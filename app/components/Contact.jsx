@@ -13,6 +13,7 @@ var Contact = React.createClass({
         <div className="small-centered small-11 medium-6 large-5">
           <h1>How can we help?</h1>
           <form action="https://getsimpleform.com/messages?form_api_token=bf9ac70ecd711befee6b55ce8665958c" method="post">
+            <input type='hidden' name='redirect_to' value='http://montcorpsite.herokuapp.com/#/contact' />
             <input type="hidden" name="source" value="corp-site"/>
             <input autoFocus type="text" name="fullName" placeholder="Enter Full Name"/>
             <input type="text" name="email" placeholder="Email Address" />
