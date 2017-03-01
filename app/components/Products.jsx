@@ -1,7 +1,7 @@
 var React = require('react');
 var Faker = require('faker');
 
-const awesome = require("url-loader?limit=10000!../images/capstone/awesome.jpeg");
+// const awesome = require("url-loader?limit=10000!../images/capstone/awesome.jpeg");
 
 var catalog =[];
 for (var i = 0; i < 18; i++) {
@@ -18,7 +18,7 @@ var Products = React.createClass({
       };
       products.push(
         <div className="column product-border">
-          <p><strong>{product.name}:</strong> for ${product.price}</p> <img src={awesome} height="30%" width="30%" alt="product" className="comp-pad"></img><button className="button">Buy Now!</button>
+          <p><strong>{product.name}:</strong> for ${product.price}</p> <img src="/images/awesome.jpeg" height="30%" width="30%" alt="product" className="comp-pad"></img><button className="button">Buy Now!</button>
         </div>
       );
     }

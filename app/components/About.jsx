@@ -1,6 +1,6 @@
 var React = require('react');
 var {Link} = require('react-router');
-const skyline_image = require("url-loader?limit=10000!../images/capstone/philly-skyline-night.jpg");
+// const skyline_image = require("url-loader?limit=10000!../images/capstone/philly-skyline-night.jpg");
 
 
 var About = React.createClass({
@@ -8,7 +8,7 @@ var About = React.createClass({
     return (
       <div className="comp-pad">
         <div className="row">
-          <img src={skyline_image} className="small-6 large-12 columns"></img>
+          <img src="/images/philly-skyline-night.jpg" className="small-6 large-12 columns"></img>
         </div>
         <h1 className="centered">About Us:</h1>
         
