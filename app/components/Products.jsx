@@ -1,11 +1,12 @@
 var React = require('react');
 var Faker = require('faker');
+var uuid = require('node-uuid');
 
 // const awesome = require("url-loader?limit=10000!../images/capstone/awesome.jpeg");
 
 var catalog =[];
 for (var i = 0; i < 18; i++) {
-  catalog.push({name: Faker.commerce.productName(), price: Faker.commerce.price()});
+  catalog.push({name: Faker.commerce.productName(), price: Faker.commerce.price(), key: uuid()});
 }
 
 var Products = React.createClass({
@@ -15,10 +16,18 @@ var Products = React.createClass({
       var product = {
         name: catalog[i].name,
         price: catalog[i].price,
+        key: catalog[i].key
       };
       products.push(
         <div className="column product-border">
-          <p><strong>{product.name}:</strong> for ${product.price}</p> <img src="/images/awesome.jpeg" height="30%" width="30%" alt="product" className="comp-pad"></img><button className="button">Buy Now!</button>
+          <p>
+            <strong>{product.name}:</strong> for 
+            ${product.price}
+          </p>
+          <p>
+            <small>item-ID:{product.key}</small>
+          </p> 
+          <img src="/images/awesome.jpeg" height="30%" width="30%" alt="product" className="comp-pad"></img><button className="button">Buy Now!</button> 
         </div>
       );
     }
