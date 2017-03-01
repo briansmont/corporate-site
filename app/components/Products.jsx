@@ -2,35 +2,37 @@ var React = require('react');
 var uuid = require('node-uuid');
 
 var SearchProducts = require('SearchProducts');
-
-var catalog =[];
-for (var i = 0; i < 18; i++) {
-  catalog.push({name: i, price: (i+1) * 5, key: uuid()});
-}
+var ProductList = require('ProductList');
 
 var Products = React.createClass({
-  renderCatalog: function() {
-    var products = [];
-    for (var i = 0; i < catalog.length; i++) {
-      var product = {
-        name: catalog[i].name,
-        price: catalog[i].price,
-        key: catalog[i].key
-      };
-      products.push(
-        <div className="column product-border">
-          <p>
-            <strong>{product.name}:</strong> for 
-            ${product.price}
-          </p>
-          <p>
-            <small>item-ID:{product.key}</small>
-          </p> 
-          <img src="/images/awesome.jpeg" height="30%" width="30%" alt="product" className="comp-pad"></img><button className="button">Buy Now!</button> 
-        </div>
-      );
-    }
-    return products;
+  
+  getInitialState: function() {
+    return {
+      searchText: '',
+      products: [
+        {
+          id: uuid(), item: "ball", price: 10
+        }, 
+        {
+          id: uuid(), item: "computer", price: 1000
+        }, 
+        {
+          id: uuid(), item: "dogfood", price: 50
+        }, 
+        {
+          id: uuid(), item: "notebook", price: 5
+        }, 
+        {
+          id: uuid(), item: "post-its", price: 2
+        },
+        {
+          id: uuid(), item: "car", price: 15000
+        }, 
+        {
+          id: uuid(), item: "pizza", price: 15
+        }
+      ]
+    };
   },
   
   handleSearch : function(searchText) {
@@ -41,12 +43,15 @@ var Products = React.createClass({
   
   
   render: function() {
+    
+    var {products} = this.state;
+    
     return (
       <div>
         <h1 className="center-text"><u>Products</u></h1>
         <SearchProducts onSearch={this.handleSearch}/>
-        <div className="row small-up-1 medium-up-2 large-up-3">
-          {this.renderCatalog()}
+        <div>
+          <ProductList products={products}/>
         </div>
       </div>
     );
