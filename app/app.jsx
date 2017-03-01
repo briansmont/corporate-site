@@ -10,10 +10,21 @@ var Home = require('Home');
 var Contact = require('Contact');
 var YourAccount = require('YourAccount');
 
+var actions = require('actions');
+var store = require('configureStore').configure();
+
+store.subscribe(() => {
+  console.log('New state', store.getState());
+});
+
+store.dispatch(actions.addProduct('Car', 10000));
+store.dispatch(actions.setSearchText('car'));
+
+
 // load foundation
 //$(document).foundation();
 
-// load APP Css
+// load APP css
 require('style!css!sass!applicationStyles')
 
 

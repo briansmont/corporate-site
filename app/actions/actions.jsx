@@ -4,3 +4,17 @@ export var setSearchText = (searchText) => {
     searchText
   };
 };
+
+// export var addPurchase 
+// export var showProducts
+// export var showPurchases
+// export var searchItem
+
+
+export var addProduct = (productName, productPrice) => {
+  return {
+    type: 'ADD_PRODUCT',
+    productName,
+    productPrice
+  };
+};

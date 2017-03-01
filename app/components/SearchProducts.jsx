@@ -1,8 +1,9 @@
 var React = require('react');
 
 var SearchProducts = React.createClass({
-  handleSearch : function() {
+  handleSearch: function() {
     var searchText = this.refs.searchText.value;
+    this.props.onSearch(searchText);
   },
   
   render: function() {

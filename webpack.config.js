@@ -42,8 +42,10 @@ module.exports = {
       AddProduct: "app/components/AddProduct.jsx",
       SearchProducts: "app/components/SearchProducts.jsx",
       actions: "app/actions/actions.jsx",
+      reducers: "app/reducers/reducers.jsx",
       applicationStyles: 'app/styles/app.scss',
       jQuery: "node_modules/jquery/dist/jquery.min.js",
+      configureStore: "app/store/configureStore.jsx"
     },
     extensions: ['', '.js', '.jsx']
   },

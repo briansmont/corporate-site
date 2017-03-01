@@ -1,5 +1,6 @@
 var React = require('react');
 var uuid = require('node-uuid');
+var moment = require('moment');
 
 var SearchProducts = require('SearchProducts');
 var ProductList = require('ProductList');
@@ -68,7 +69,8 @@ var Products = React.createClass({
        {
          id: uuid(),
          item: productName,
-         price: productPrice
+         price: productPrice,
+         addedAt: moment().format('LLLL')
        }
         
       ]
