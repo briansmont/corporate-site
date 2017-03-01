@@ -29,8 +29,32 @@ var Products = React.createClass({
           id: uuid(), item: "car", price: 15000
         }, 
         {
-          id: uuid(), item: "pizza", price: 15
-        }
+          id: uuid(), item: "hat", price: 24
+        },
+        {
+          id: uuid(), item: "shirt", price: 55
+        },
+        {
+          id: uuid(), item: "picture frame", price: 20
+        },
+        {
+          id: uuid(), item: "cell phone", price: 400
+        },
+        {
+          id: uuid(), item: "monitor", price: 125
+        },
+        {
+          id: uuid(), item: "camera", price: 250
+        },
+        {
+          id: uuid(), item: "magazine", price: 6
+        },
+        {
+          id: uuid(), item: "desk chair", price: 80
+        },
+        {
+          id: uuid(), item: "binder", price: 18
+        },
       ]
     };
   },
