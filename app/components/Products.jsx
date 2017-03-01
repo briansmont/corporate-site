@@ -1,12 +1,11 @@
 var React = require('react');
-var Faker = require('faker');
 var uuid = require('node-uuid');
 
-// const awesome = require("url-loader?limit=10000!../images/capstone/awesome.jpeg");
+var SearchProducts = require('SearchProducts');
 
 var catalog =[];
 for (var i = 0; i < 18; i++) {
-  catalog.push({name: Faker.commerce.productName(), price: Faker.commerce.price(), key: uuid()});
+  catalog.push({name: i, price: (i+1) * 5, key: uuid()});
 }
 
 var Products = React.createClass({
@@ -34,10 +33,18 @@ var Products = React.createClass({
     return products;
   },
   
+  handleSearch : function(searchText) {
+    this.setState({
+      searchText: searchText.toLowerCase(),
+    });
+  },
+  
+  
   render: function() {
     return (
       <div>
         <h1 className="center-text"><u>Products</u></h1>
+        <SearchProducts onSearch={this.handleSearch}/>
         <div className="row small-up-1 medium-up-2 large-up-3">
           {this.renderCatalog()}
         </div>
