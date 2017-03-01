@@ -1,9 +1,15 @@
 var React = require('react');
 
-const clutter = require("url-loader?limit=10000!../images/capstone/office-clutter.jpeg");
-const dualMonitor = require("url-loader?limit=10000!../images/capstone/dual-monitor.jpeg");
-const laptops = require("url-loader?limit=10000!../images/capstone/office-laptops.jpeg");
-
+// const clutter = require("url-loader?limit=10000!../images/capstone/office-clutter.jpeg");
+// const dualMonitor = require("url-loader?limit=10000!../images/capstone/dual-monitor.jpeg");
+// const laptops = require("url-loader?limit=10000!../images/capstone/office-laptops.jpeg");
+//         <div className="row comp-pad">
+//           <div className="small-2 large-4 columns"><img src={clutter}></img></div>
+//           <div className="small-4 large-4 columns"><img src={dualMonitor}></img></div>
+//           <div className="small-6 large-4 columns"><img src={laptops}></img></div>
+//         </div>
+        
+        
 var Home = React.createClass({
   render: function() {
     return (
@@ -17,11 +23,7 @@ var Home = React.createClass({
             <p>Our team is here to help</p>
           </div>
         </div>
-        <div className="row comp-pad">
-          <div className="small-2 large-4 columns"><img src={clutter}></img></div>
-          <div className="small-4 large-4 columns"><img src={dualMonitor}></img></div>
-          <div className="small-6 large-4 columns"><img src={laptops}></img></div>
-        </div>
+        
         <div className="row comp-pad">
           <div className="small-2 large-4 columns"><img src="/images/office-clutter.jpeg"></img></div>
           <div className="small-4 large-4 columns"><img src="/images/dual-monitor.jpeg"></img></div>
