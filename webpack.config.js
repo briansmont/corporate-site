@@ -45,7 +45,8 @@ module.exports = {
       reducers: "app/reducers/reducers.jsx",
       applicationStyles: 'app/styles/app.scss',
       jQuery: "node_modules/jquery/dist/jquery.min.js",
-      configureStore: "app/store/configureStore.jsx"
+      configureStore: "app/store/configureStore.jsx",
+      Router: "app/router/router.jsx"
     },
     extensions: ['', '.js', '.jsx']
   },

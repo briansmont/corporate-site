@@ -9,6 +9,7 @@ var Products = require('Products');
 var Home = require('Home');
 var Contact = require('Contact');
 var YourAccount = require('YourAccount');
+import router from 'Router';
 
 var actions = require('actions');
 var store = require('configureStore').configure();
@@ -29,14 +30,6 @@ require('style!css!sass!applicationStyles')
 
 
 ReactDOM.render(
-  <Router history={hashHistory}>
-    <Route path="/" component={Main}>
-      <Route path="/about" component={About}/>
-      <Route path="/products" component={Products}/>
-      <Route path="/contact" component={Contact}/>
-      <Route path="/account" component={YourAccount}/>
-      <IndexRoute component={Home}/>
-    </Route>
-  </Router>,
+  {router},
   document.getElementById('app')
 );
