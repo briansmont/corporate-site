@@ -93,7 +93,7 @@ var Products = React.createClass({
       <div className="comp-pad">
         <h1 className="center-text"><u>Products</u></h1>
         <SearchProducts onSearch={this.handleSearch}/>
-        <ProductList products={products}/>
+        <ProductList/>
         <div className="column small-centered small-11 medium-6 large-5">
           <AddProduct onNewProduct={this.handleAddProduct}/>
         </div>

@@ -1,5 +1,6 @@
 var React = require('react');
 var Product = require('Product');
+var {connect} = require('react-redux');
 
 var ProductList = React.createClass({
   
@@ -23,4 +24,11 @@ var ProductList = React.createClass({
   }
 });
 
-module.exports = ProductList;
+module.exports = connect(
+  (state) => {
+    return {
+      products: state.products
+    };
+  }
+  
+)(ProductList);

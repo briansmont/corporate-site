@@ -1,9 +1,11 @@
 var React = require('react');
+var {connect} = require('react-redux');
+var actions = require('actions');
 
 var Product = React.createClass({
   
   render: function() {
-    var {item, price, id, addedAt} = this.props;
+    var {item, price, id, addedAt, dispatch} = this.props;
     
     return (
       <div className="column product-border">
@@ -14,10 +16,10 @@ var Product = React.createClass({
         <p>
           <small>ID:{id}</small>, added: {addedAt}
         </p> 
-        <img src="/images/awesome.jpeg" height="30%" width="30%" alt="product" className="comp-pad"></img><button className="button">Buy Now!</button> 
+        <img src="/images/awesome.jpeg" height="30%" width="30%" alt="product" className="comp-pad"></img><button className="button">Get it Now!</button> 
       </div>
     );
   }
 });
 
-module.exports = Product;
+module.exports = connect()(Product);
