@@ -3,12 +3,8 @@ var ReactDOM = require('react-dom');
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 var $ = require('jQuery');
 
-var Main = require('Main');
-var About = require('About');
-var Products = require('Products');
-var Home = require('Home');
-var Contact = require('Contact');
-var YourAccount = require('YourAccount');
+
+
 import router from 'Router';
 
 var actions = require('actions');
