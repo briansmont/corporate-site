@@ -21,7 +21,7 @@ store.dispatch(actions.setSearchText('car'));
 //$(document).foundation();
 
 // load APP css
-require('style!css!sass!applicationStyles')
+require('style!css!sass!applicationStyles');
 
 
 ReactDOM.render(

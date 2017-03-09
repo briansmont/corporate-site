@@ -2,7 +2,7 @@ var React = require('react');
 var uuid = require('node-uuid');
 var moment = require('moment');
 
-var SearchProducts = require('SearchProducts');
+import SearchProducts from 'SearchProducts';
 var ProductList = require('ProductList');
 import AddProduct from 'AddProduct';
 
