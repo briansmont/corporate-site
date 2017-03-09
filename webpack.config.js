@@ -46,7 +46,8 @@ module.exports = {
       applicationStyles: 'app/styles/app.scss',
       jQuery: "node_modules/jquery/dist/jquery.min.js",
       configureStore: "app/store/configureStore.jsx",
-      Router: "app/router/router.jsx"
+      Router: "app/router/router.jsx",
+      CorpAPI: "app/api/CorpAPI.jsx"
     },
     extensions: ['', '.js', '.jsx']
   },

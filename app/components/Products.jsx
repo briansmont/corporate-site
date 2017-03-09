@@ -1,13 +1,14 @@
 var React = require('react');
+import * as Redux from 'react-redux';
 var uuid = require('node-uuid');
 var moment = require('moment');
 
 import SearchProducts from 'SearchProducts';
-var ProductList = require('ProductList');
+import ProductList from 'ProductList';
 import AddProduct from 'AddProduct';
 
 
-var Products = React.createClass({
+export var Products = React.createClass({
   handleSearch : function(searchText) {
     this.setState({
       searchText: searchText.toLowerCase(),
@@ -20,7 +21,7 @@ var Products = React.createClass({
     return (
       <div className="comp-pad">
         <h1 className="center-text"><u>Products</u></h1>
-        <SearchProducts onSearch={this.handleSearch}/>
+        <SearchProducts/>
         <ProductList/>
         <div className="column small-centered small-11 medium-6 large-5">
           <AddProduct/>
@@ -30,4 +31,4 @@ var Products = React.createClass({
   }
 });
 
-module.exports = Products;
+export default Redux.connect()(Products);

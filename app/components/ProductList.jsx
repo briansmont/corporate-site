@@ -1,18 +1,21 @@
 var React = require('react');
-var Product = require('Product');
+import Product from 'Product';
 var {connect} = require('react-redux');
+var CorpAPI = require('CorpAPI');
+
 
 var ProductList = React.createClass({
   
   render: function() {
-    var {products} = this.props;
+    var {products, searchText} = this.props;
     var renderProducts = () => {
-      return products.map((product) => {
+      var filteredProducts = CorpAPI.filterProducts(products, searchText);
+      return filteredProducts.map((product)  => {
         return (
           <Product key={product.id} {...product}/>  
-          
         );
       });
+      
     };
     
     return (
@@ -26,9 +29,7 @@ var ProductList = React.createClass({
 
 module.exports = connect(
   (state) => {
-    return {
-      products: state.products
-    };
+    return state;
   }
   
 )(ProductList);
