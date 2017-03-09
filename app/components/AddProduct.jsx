@@ -1,14 +1,17 @@
 var React = require('react');
+var {connect} = require('react-redux');
+var actions = require('actions');
 
-var AddProduct = React.createClass({
+export var AddProduct = React.createClass({
   handleSubmit: function(e) {
     e.preventDefault();
+    var {dispatch} = this.props;
     var productName = this.refs.productName.value;
     var productPrice = this.refs.productPrice.value;
     if (productName.length > 0 && productPrice > 0) {
       this.refs.productName.value = '';
       this.refs.productPrice.value = '';
-      this.props.onNewProduct(productName, productPrice);
+      dispatch(actions.addProduct(productName, productPrice));
     } else {
       this.refs.productName.focus();
     }
@@ -28,4 +31,4 @@ var AddProduct = React.createClass({
   }
 });
 
-module.exports = AddProduct;
+export default connect()(AddProduct);

@@ -13,7 +13,7 @@ store.subscribe(() => {
   console.log('New state', store.getState());
 });
 
-store.dispatch(actions.addProduct('Car', 10000));
+store.dispatch(actions.addProduct('Boat', 10000));
 store.dispatch(actions.setSearchText('car'));
 
 
