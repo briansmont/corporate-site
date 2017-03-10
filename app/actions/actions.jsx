@@ -18,3 +18,11 @@ export var addProduct = (productName, productPrice) => {
     productPrice
   };
 };
+
+export var addPurchase = (productName, productPrice) => {
+  return {
+    type: 'ADD_PURCHASE',
+    productName,
+    productPrice
+  };
+};

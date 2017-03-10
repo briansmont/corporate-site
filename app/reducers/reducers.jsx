@@ -22,7 +22,23 @@ export var productsReducer = (state = [], action) => {
           addedAt: moment().format('LLLL')
         }
       ];
+    case 'ADD_PURCHASE':
+      return [
+        ...state,
+        {
+          item: action.productName,
+          price: action.productPrice,
+          purchasedAt: moment().format('LLLL')
+        }
+      ];
     default:
       return state;
   }
 };
+
+
+
+
+
+
+

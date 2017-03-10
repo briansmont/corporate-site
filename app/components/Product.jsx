@@ -4,6 +4,7 @@ var actions = require('actions');
 
 var Product = React.createClass({
   
+  
   render: function() {
     var {item, price, id, addedAt, dispatch} = this.props;
     
@@ -16,7 +17,8 @@ var Product = React.createClass({
         <p>
           <small>ID:{id}</small>, added: {addedAt}
         </p> 
-        <img src="/images/awesome.jpeg" height="30%" width="30%" alt="product" className="comp-pad"></img><button className="button">Get it Now!</button> 
+        <img src="/images/awesome.jpeg" height="30%" width="30%" alt="product" className="comp-pad"></img>
+        <button onSubmit={this.handleSubmit} className="button">Get it Now!</button> 
       </div>
     );
   }
