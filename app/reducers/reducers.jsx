@@ -22,20 +22,41 @@ export var productsReducer = (state = [], action) => {
           addedAt: moment().format('LLLL')
         }
       ];
-    case 'ADD_PURCHASE':
-      return [
-        ...state,
-        {
-          item: action.productName,
-          price: action.productPrice,
-          purchasedAt: moment().format('LLLL')
-        }
-      ];
+    // case 'BUY_PRODUCT':
+    //   return [
+    //     ...state,
+    //     {
+    //       purchaseId: uuid(),
+    //       item: action.productName,
+    //       price: action.productPrice,
+    //       purchasedAt: moment().format('LLLL')
+    //     }
+    //   ];
+      
+
     default:
       return state;
   }
 };
 
+export var purchaseReducer = (state = [], action) => {
+  switch (action.type) {
+    case 'BUY_PRODUCT':
+      return [
+        ...state,
+        {
+          purchaseId: uuid(),
+          item: action.productName,
+          price: action.productPrice,
+          purchasedAt: moment().format('LLLL')
+        }
+      ];
+      
+
+    default:
+      return state;
+  }
+};
 
 
 

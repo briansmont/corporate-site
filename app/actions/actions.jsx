@@ -19,9 +19,9 @@ export var addProduct = (productName, productPrice) => {
   };
 };
 
-export var addPurchase = (productName, productPrice) => {
+export var buyProduct = (productName, productPrice) => {
   return {
-    type: 'ADD_PURCHASE',
+    type: 'BUY_PRODUCT',
     productName,
     productPrice
   };
