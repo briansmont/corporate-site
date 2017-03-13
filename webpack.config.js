@@ -36,7 +36,7 @@ module.exports = {
       Nav: "app/components/Nav.jsx",
       Home: "app/components/Home.jsx",
       Contact: "app/components/Contact.jsx",
-      YourAccount: "app/components/YourAccount.jsx",
+      Profile: "app/components/Profile.jsx",
       ProductList: "app/components/ProductList.jsx",
       Product: "app/components/Product.jsx",
       AddProduct: "app/components/AddProduct.jsx",
@@ -47,7 +47,9 @@ module.exports = {
       jQuery: "node_modules/jquery/dist/jquery.min.js",
       configureStore: "app/store/configureStore.jsx",
       Router: "app/router/router.jsx",
-      CorpAPI: "app/api/CorpAPI.jsx"
+      CorpAPI: "app/api/CorpAPI.jsx",
+      Orders: "app/components/Orders.jsx",
+      Order: "app/components/Order.jsx"
     },
     extensions: ['', '.js', '.jsx']
   },

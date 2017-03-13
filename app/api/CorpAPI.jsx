@@ -10,5 +10,11 @@ module.exports = {
     });
     
     return filteredProducts;
+  },
+  
+  filterOrders: function(purchases) {
+    var filteredOrders = purchases;
+    return filteredOrders;
   }
+  
 };

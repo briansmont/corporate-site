@@ -45,7 +45,7 @@ export var purchaseReducer = (state = [], action) => {
       return [
         ...state,
         {
-          purchaseId: uuid(),
+          id: uuid(),
           item: action.productName,
           price: action.productPrice,
           purchasedAt: moment().format('LLLL')

@@ -5,7 +5,7 @@ export var setSearchText = (searchText) => {
   };
 };
 
-// export var addPurchase 
+// export var buyProduct 
 // export var showProducts
 // export var showPurchases
 // export var searchItem
