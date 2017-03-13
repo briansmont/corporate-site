@@ -20,7 +20,12 @@ var Orders = React.createClass({
     
     return (
       <div className="row">
-        {renderOrders()}
+        <div className="column small-centered small-11 medium-6 large-5">
+          <div className="container">
+            <h2 className="center-text"><u>Order History</u></h2>
+            {renderOrders()}
+          </div>
+        </div>
       </div>
       
     );

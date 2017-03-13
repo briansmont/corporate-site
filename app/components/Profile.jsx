@@ -8,8 +8,6 @@ var Profile = React.createClass({
       <div>
         <h1>Your Account!</h1>
       
-      
-        <h3>Your Orders!</h3>
         <Orders/>
       </div>
     );

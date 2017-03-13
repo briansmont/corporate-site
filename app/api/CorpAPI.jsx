@@ -14,7 +14,8 @@ module.exports = {
   
   filterOrders: function(purchases) {
     var filteredOrders = purchases;
-    return filteredOrders;
+    var reversedOrders = filteredOrders.reverse();
+    return reversedOrders;
   }
   
 };

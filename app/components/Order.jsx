@@ -1,6 +1,5 @@
 var React = require('react');
 var {connect} = require('react-redux');
-var actions = require('actions');
 
 var Order = React.createClass({
 
@@ -11,11 +10,9 @@ var Order = React.createClass({
     
     return (
       <div>
-          <p>
+          <p className="bottom-border">
             <strong>{item}:</strong> for 
-            ${price} ||  
-
-            <small>Order #:{id}</small>, ordered: {purchasedAt}
+            ${price} || <small>Order #:{id}</small>, ordered: {purchasedAt}
           </p> 
 
       </div>
