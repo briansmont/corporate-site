@@ -15,24 +15,8 @@ export var productsReducer = (state = [], action) => {
     case 'ADD_PRODUCT':
       return [
         ...state,
-        {
-          id: uuid(),
-          item: action.productName,
-          price: action.productPrice,
-          addedAt: moment().format('LLLL')
-        }
+        action.product
       ];
-    // case 'BUY_PRODUCT':
-    //   return [
-    //     ...state,
-    //     {
-    //       purchaseId: uuid(),
-    //       item: action.productName,
-    //       price: action.productPrice,
-    //       purchasedAt: moment().format('LLLL')
-    //     }
-    //   ];
-      
 
     default:
       return state;

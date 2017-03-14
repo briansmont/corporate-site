@@ -1,3 +1,6 @@
+import firebase, {firebaseRef} from 'app/firebase/index';
+import moment from 'moment';
+
 export var setSearchText = (searchText) => {
   return {
     type: 'SET_SEARCH_TEXT',
@@ -5,17 +8,27 @@ export var setSearchText = (searchText) => {
   };
 };
 
-// export var buyProduct 
-// export var showProducts
-// export var showPurchases
-// export var searchItem
-
-
-export var addProduct = (productName, productPrice) => {
+export var addProduct = (product) => {
   return {
     type: 'ADD_PRODUCT',
-    productName,
-    productPrice
+    product
+  };
+};
+
+export var startAddProduct = (productName, productPrice) => {
+  return (dispatch, getState) => {
+    var product = {
+          productName,
+          productPrice,
+          addedAt: moment().format('LLLL')
+    };
+    var productRef = firebaseRef.child('products').push(product);
+    productRef.then(() => {
+      dispatch(addProduct({
+        ...product,
+        id: productRef.key
+      }));
+    });
   };
 };
 

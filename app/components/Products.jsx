@@ -9,13 +9,6 @@ import AddProduct from 'AddProduct';
 
 
 export var Products = React.createClass({
-  handleSearch : function(searchText) {
-    this.setState({
-      searchText: searchText.toLowerCase(),
-    });
-  },
-  
-  
   render: function() {
     
     return (

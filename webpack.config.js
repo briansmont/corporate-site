@@ -30,6 +30,7 @@ module.exports = {
   resolve: {
     root: __dirname,
     alias: {
+      app: 'app',
       Main: "app/components/Main.jsx",
       About: "app/components/About.jsx",
       Products: "app/components/Products.jsx",

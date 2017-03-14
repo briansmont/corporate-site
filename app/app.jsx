@@ -13,10 +13,10 @@ store.subscribe(() => {
   console.log('New state', store.getState());
 });
 
-store.dispatch(actions.addProduct('Boat', 10000));
-store.dispatch(actions.addProduct('House', 1000000));
-store.dispatch(actions.addProduct('Car', 20000));
-store.dispatch(actions.buyProduct('Car', 20000));
+store.dispatch(actions.startAddProduct('Boat', 10000));
+store.dispatch(actions.startAddProduct('House', 1000000));
+store.dispatch(actions.startAddProduct('Car', 20000));
+store.dispatch(actions.startAddProduct('Car', 20000));
 
 
 // load foundation
