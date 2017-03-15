@@ -10,7 +10,7 @@ var Product = React.createClass({
     var productName = this.refs.productName.value;
     var productPrice = this.refs.productPrice.value;
     if (productName && productPrice) {
-      dispatch(actions.buyProduct(productName, productPrice));
+      dispatch(actions.startBuyProduct(productName, productPrice));
     } else {
       alert('issue with your order, please try again later');
     }

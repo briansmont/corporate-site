@@ -32,12 +32,12 @@ export var purchaseReducer = (state = [], action) => {
     case 'BUY_PRODUCT':
       return [
         ...state,
-        {
-          id: uuid(),
-          item: action.productName,
-          price: action.productPrice,
-          purchasedAt: moment().format('LLLL')
-        }
+        action.purchase
+      ];
+    case 'GET_PURCHASES':
+      return [
+        ...state,
+        ...action.purchases
       ];
       
 

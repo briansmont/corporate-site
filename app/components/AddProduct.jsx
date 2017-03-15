@@ -11,6 +11,7 @@ export var AddProduct = React.createClass({
     if (productName.length > 0 && productPrice > 0) {
       this.refs.productName.value = '';
       this.refs.productPrice.value = '';
+      this.refs.productName.focus();
       dispatch(actions.startAddProduct(productName, productPrice));
     } else {
       this.refs.productName.focus();

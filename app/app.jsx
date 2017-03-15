@@ -10,6 +10,8 @@ var store = require('configureStore').configure();
 var {Provider} = require('react-redux');
 
 store.dispatch(actions.startGetProducts());
+store.dispatch(actions.startGetPurchases());
+
 // load foundation
 //$(document).foundation();
 

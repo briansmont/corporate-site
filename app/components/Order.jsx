@@ -6,13 +6,13 @@ var Order = React.createClass({
   
   
   render: function() {
-    var {item, price, id, purchasedAt} = this.props;
+    var {productName, productPrice, id, purchasedAt} = this.props;
     
     return (
       <div>
           <p className="bottom-border">
-            <strong>{item}:</strong> for 
-            ${price} || <small>Order #:{id}</small>, ordered: {purchasedAt}
+            <strong>{productName}:</strong> for 
+            ${productPrice} || <small>Order #:{id}</small>, ordered: {purchasedAt}
           </p> 
 
       </div>

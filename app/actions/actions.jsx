@@ -8,6 +8,7 @@ export var setSearchText = (searchText) => {
   };
 };
 
+// CREATE NEW PRODUCTS AND ADD TO CATALOG
 export var addProduct = (product) => {
   return {
     type: 'ADD_PRODUCT',
@@ -32,15 +33,7 @@ export var startAddProduct = (productName, productPrice) => {
   };
 };
 
-export var buyProduct = (productName, productPrice) => {
-  return {
-    type: 'BUY_PRODUCT',
-    productName,
-    productPrice
-  };
-};
-
-
+// SHOW PRODUCT CATALOG
 export var getProducts = (products) => {
   return {
     type: 'GET_PRODUCTS',
@@ -65,3 +58,70 @@ export var startGetProducts = () => {
     });
   };
 };
+
+
+// MAKE PURCHASES
+export var buyProduct = (purchase) => {
+  return {
+    type: 'BUY_PRODUCT',
+    purchase
+  };
+};
+
+export var startBuyProduct = (productName, productPrice) => {
+  return (dispatch, getState) => {
+    var purchase = {
+          productName,
+          productPrice,
+          purchasedAt: moment().format('LLLL')
+    };
+    var purchaseRef = firebaseRef.child('purchases').push(purchase);
+    purchaseRef.then(() => {
+      dispatch(buyProduct({
+        ...purchase,
+        id: purchaseRef.key
+      }));
+    });
+  };
+};
+
+
+
+// SHOW PURCHASES IN PROFILE
+export var getPurchases = (purchases) => {
+  return {
+    type: 'GET_PURCHASES',
+    purchases
+  };
+};
+
+export var startGetPurchases = () => {
+  return (dispatch, getState) => {
+    var purchasesRef = firebaseRef.child('purchases');
+    return purchasesRef.once('value').then((snapshot) => {
+      var purchases = snapshot.val() || {};
+      var parsedPurchases = [];
+      
+      Object.keys(purchases).forEach((purchaseId) => {
+        parsedPurchases.push({
+          id: purchaseId,
+          ...purchases[purchaseId]
+        });
+      });
+      dispatch(getPurchases(parsedPurchases));
+    });
+  };
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
