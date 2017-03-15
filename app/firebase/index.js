@@ -2,11 +2,11 @@ import firebase from 'firebase';
 
 try {
   var config = {
-    apiKey: "AIzaSyDodYhgc4D-1rJl18w2FvcE9fzxVv-EV0s",
-    authDomain: "mont-corp-site.firebaseapp.com",
-    databaseURL: "https://mont-corp-site.firebaseio.com",
-    storageBucket: "mont-corp-site.appspot.com",
-    messagingSenderId: "94884760505"
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID
   };
   
   firebase.initializeApp(config);
