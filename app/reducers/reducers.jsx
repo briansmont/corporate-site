@@ -17,7 +17,11 @@ export var productsReducer = (state = [], action) => {
         ...state,
         action.product
       ];
-
+    case 'GET_PRODUCTS':
+      return [
+        ...state,
+        ...action.products
+      ];
     default:
       return state;
   }

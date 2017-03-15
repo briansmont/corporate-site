@@ -18,16 +18,16 @@ var Product = React.createClass({
   
   
   render: function() {
-    var {item, price, id, addedAt} = this.props;
+    var {productName, productPrice, id, addedAt} = this.props;
     
     return (
       <div className="column product-border">
         <form onSubmit={this.handleSubmit}>
-          <input type="hidden" ref="productName" value={item}/>
-          <input type="hidden" ref="productPrice" value={price}/>
+          <input type="hidden" ref="productName" value={productName}/>
+          <input type="hidden" ref="productPrice" value={productPrice}/>
           <p>
-            <strong>{item}:</strong> for 
-            ${price}
+            <strong>{productName}:</strong> for 
+            ${productPrice}
           </p>
           <p>
             <small>ID:{id}</small>, added: {addedAt}

@@ -4,8 +4,8 @@ module.exports = {
     
     //Filter by searchText
     filteredProducts = filteredProducts.filter((product) => {
-      // console.log(product);
-      var item = product.item.toLowerCase();
+      console.log(product);
+      var item = product.productName.toLowerCase();
       return searchText.length === 0 || item.indexOf(searchText) > -1;
     });
     

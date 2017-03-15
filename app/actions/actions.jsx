@@ -39,3 +39,29 @@ export var buyProduct = (productName, productPrice) => {
     productPrice
   };
 };
+
+
+export var getProducts = (products) => {
+  return {
+    type: 'GET_PRODUCTS',
+    products
+  };
+};
+
+export var startGetProducts = () => {
+  return (dispatch, getState) => {
+    var productsRef = firebaseRef.child('products');
+    return productsRef.once('value').then((snapshot) => {
+      var products = snapshot.val() || {};
+      var parsedProducts = [];
+      
+      Object.keys(products).forEach((productId) => {
+        parsedProducts.push({
+          id: productId,
+          ...products[productId]
+        });
+      });
+      dispatch(getProducts(parsedProducts));
+    });
+  };
+};

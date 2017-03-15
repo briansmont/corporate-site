@@ -9,16 +9,7 @@ var actions = require('actions');
 var store = require('configureStore').configure();
 var {Provider} = require('react-redux');
 
-store.subscribe(() => {
-  console.log('New state', store.getState());
-});
-
-store.dispatch(actions.startAddProduct('Boat', 10000));
-store.dispatch(actions.startAddProduct('House', 1000000));
-store.dispatch(actions.startAddProduct('Car', 20000));
-store.dispatch(actions.startAddProduct('Car', 20000));
-
-
+store.dispatch(actions.startGetProducts());
 // load foundation
 //$(document).foundation();
 
