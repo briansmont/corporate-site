@@ -7,6 +7,7 @@ import Contact from 'Contact';
 import Profile from 'Profile';
 import Main from 'Main';
 import Home from 'Home';
+import Login from 'Login';
 
 export default (
   <Router history={hashHistory}>
@@ -15,6 +16,7 @@ export default (
       <Route path="/products" component={Products}/>
       <Route path="/contact" component={Contact}/>
       <Route path="/profile" component={Profile}/>
+      <Route path="/login" component={Login}/>
       <IndexRoute component={Home}/>
     </Route>
   </Router>

@@ -3,6 +3,13 @@ var {Link, IndexLink} = require('react-router');
 
 
 var Nav = React.createClass({ 
+  renderLogout: function() {
+    return (
+        <li>
+          <Link to="/login" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Logout</Link>
+        </li>
+    );
+  },
   render: function() {
     return (
     <div className="top-bar">
@@ -25,6 +32,10 @@ var Nav = React.createClass({
       </div>
       <div className="top-bar-right">
         <ul className="menu">
+          {this.renderLogout()}
+          <li>
+            <Link to="/login" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Login</Link>
+          </li>
           <li>
             <Link to="/profile" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Your Account</Link>
           </li>

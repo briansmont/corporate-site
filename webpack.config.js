@@ -73,7 +73,8 @@ module.exports = {
       Router: "app/router/router.jsx",
       CorpAPI: "app/api/CorpAPI.jsx",
       Orders: "app/components/Orders.jsx",
-      Order: "app/components/Order.jsx"
+      Order: "app/components/Order.jsx",
+      Login: "app/components/Login.jsx"
     },
     extensions: ['', '.js', '.jsx']
   },
