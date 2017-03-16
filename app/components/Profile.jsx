@@ -1,12 +1,30 @@
 var React = require('react');
 import Orders from 'Orders';
+import * as actions from 'actions';
+import {hashHistory} from 'react-router';
+import * as Redux from 'react-redux';
 
+import firebase from 'app/firebase/';
 
-var Profile = React.createClass({
+export var Profile = React.createClass({
+  onLogout: function(e) {
+    e.preventDefault();
+    var {dispatch} = this.props;
+    dispatch(actions.startLogout());
+    firebase.auth().onAuthStateChanged((user) => {
+      if (!user) {
+        hashHistory.push('/login');
+      }
+    });
+  },
+  
   render: function() {
     return (
       <div>
-        <h1>Your Account!</h1>
+        <div className="page-actions">
+          <a href="/" onClick={this.onLogout}>Sign Out</a>
+        </div>
+        <h1 className="page-title">Your Account!</h1>
       
         <Orders/>
       </div>
@@ -14,4 +32,4 @@ var Profile = React.createClass({
   }
 });
 
-module.exports = Profile;
+export default Redux.connect()(Profile);
