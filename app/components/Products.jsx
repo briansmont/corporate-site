@@ -1,7 +1,5 @@
 var React = require('react');
 import * as Redux from 'react-redux';
-var uuid = require('node-uuid');
-var moment = require('moment');
 
 import SearchProducts from 'SearchProducts';
 import ProductList from 'ProductList';
@@ -12,12 +10,12 @@ import firebase from 'app/firebase/';
 export var Products = React.createClass({
   renderAddProduct: function() {
     if (firebase.auth().currentUser) {
+      console.log(firebase.auth().currentUser);
       return (
         <AddProduct/>
       );
     }
   },
-  
   
   render: function() {
     
