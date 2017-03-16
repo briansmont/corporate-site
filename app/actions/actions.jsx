@@ -1,4 +1,4 @@
-import firebase, {firebaseRef} from 'app/firebase/index';
+import firebase, {firebaseRef, googleProvider} from 'app/firebase/index';
 import moment from 'moment';
 
 export var setSearchText = (searchText) => {
@@ -114,14 +114,24 @@ export var startGetPurchases = () => {
 };
 
 
+// LOG IN & LOG OUT ACTIONS
 
+export var startLogin = () => {
+  return (dispatch, getState) => {
+    return firebase.auth().signInWithPopup(googleProvider).then((result) => {
+      console.log('Auth worked!', result);
+    }, (error) => {
+      console.log('Unable to auth', error);
+    });
+  };
+};
 
-
-
-
-
-
-
-
+export var startLogout = () => {
+  return (dispatch, getState) => {
+    return firebase.auth().signOut().then(() => {
+      console.log('Logged out!');
+    });
+  };
+};
 
 

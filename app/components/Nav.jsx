@@ -1,12 +1,20 @@
 var React = require('react');
 var {Link, IndexLink} = require('react-router');
+import * as Redux from 'react-redux';
 
+import * as actions from 'actions';
 
-var Nav = React.createClass({ 
+export var Nav = React.createClass({ 
+  onLogout: function(e) {
+    e.preventDefault();
+    var {dispatch} = this.props;
+    dispatch(actions.startLogout());
+  },
+  
   renderLogout: function() {
     return (
         <li>
-          <Link to="/login" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Logout</Link>
+          <Link to="/login" onClick={this.onLogout} activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Logout</Link>
         </li>
     );
   },
@@ -47,4 +55,4 @@ var Nav = React.createClass({
   
 });
 
-module.exports = Nav;
+export default Redux.connect()(Nav);
