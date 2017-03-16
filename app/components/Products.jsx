@@ -7,8 +7,18 @@ import SearchProducts from 'SearchProducts';
 import ProductList from 'ProductList';
 import AddProduct from 'AddProduct';
 
+import firebase from 'app/firebase/';
 
 export var Products = React.createClass({
+  renderAddProduct: function() {
+    if (firebase.auth().currentUser) {
+      return (
+        <AddProduct/>
+      );
+    }
+  },
+  
+  
   render: function() {
     
     return (
@@ -17,7 +27,7 @@ export var Products = React.createClass({
         <SearchProducts/>
         <ProductList/>
         <div className="column small-centered small-11 medium-6 large-5">
-          <AddProduct/>
+          {this.renderAddProduct()}
         </div>
       </div>
     );
