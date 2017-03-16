@@ -1,14 +1,23 @@
 var React = require('react');
 var {Link, IndexLink} = require('react-router');
 import * as Redux from 'react-redux';
+import {hashHistory} from 'react-router';
 
 import * as actions from 'actions';
+import firebase from 'app/firebase/';
 
 export var Nav = React.createClass({ 
   onLogout: function(e) {
     e.preventDefault();
     var {dispatch} = this.props;
     dispatch(actions.startLogout());
+    
+    firebase.auth().onAuthStateChanged((user) => {
+      if (!user) {
+        hashHistory.push('/login');
+      }
+    });
+    
   },
   
   renderLogout: function() {

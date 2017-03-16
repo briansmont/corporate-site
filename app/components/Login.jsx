@@ -1,7 +1,17 @@
 import React from 'react';
 import * as Redux from 'react-redux';
+import {hashHistory} from 'react-router';
 
 import * as actions from 'actions';
+import firebase from 'app/firebase/';
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    hashHistory.push('/profile');
+  } else {
+    hashHistory('/login');
+  }
+});
 
 export var Login = React.createClass({
   onLogin() {

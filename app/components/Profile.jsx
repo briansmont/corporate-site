@@ -1,6 +1,6 @@
 var React = require('react');
-var {Link} = require('react-router');
 import Orders from 'Orders';
+
 
 var Profile = React.createClass({
   render: function() {
