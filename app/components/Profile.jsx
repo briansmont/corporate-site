@@ -8,18 +8,16 @@ import firebase from 'app/firebase/';
 
 export var Profile = React.createClass({
   renderUserData: function() {
-    var user, name, email, userImage, userID;
+    var user, name, email, userImage;
     if (firebase.auth().currentUser) {
       user = firebase.auth().currentUser;
-      console.log(user);
       name = user.displayName;
       email = user.email;
       userImage = user.photoURL;
-      console.log(userImage);
-      userID = user.uid;
+      
       return (
         <div>
-          <div class="row">
+          <div className="row">
             <img src={userImage}></img>
             <h2>{name}</h2>
           </div>
@@ -38,6 +36,8 @@ export var Profile = React.createClass({
     e.preventDefault();
     var {dispatch} = this.props;
     dispatch(actions.startLogout());
+    dispatch(actions.logout());
+    
     firebase.auth().onAuthStateChanged((user) => {
       if (!user) {
         hashHistory.push('/login');

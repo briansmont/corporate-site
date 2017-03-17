@@ -4,11 +4,14 @@ import {hashHistory} from 'react-router';
 
 import * as actions from 'actions';
 import firebase from 'app/firebase/';
+var store = require('configureStore').configure();
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
+    store.dispatch(actions.login(user.uid));
     hashHistory.push('/profile');
   } else {
+    store.dispatch(actions.logout());
     hashHistory('/login');
   }
 });
