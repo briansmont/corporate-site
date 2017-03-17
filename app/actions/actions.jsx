@@ -116,10 +116,14 @@ export var startGetPurchases = () => {
 
 // LOG IN & LOG OUT ACTIONS
 
+var user;
+
 export var startLogin = () => {
   return (dispatch, getState) => {
     return firebase.auth().signInWithPopup(googleProvider).then((result) => {
       console.log('Auth worked!', result);
+      user = result;
+      console.log(user);
     }, (error) => {
       console.log('Unable to auth', error);
     });

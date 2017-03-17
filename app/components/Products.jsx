@@ -6,14 +6,17 @@ import ProductList from 'ProductList';
 import AddProduct from 'AddProduct';
 
 import firebase from 'app/firebase/';
-
 export var Products = React.createClass({
   renderAddProduct: function() {
+    
     if (firebase.auth().currentUser) {
-      console.log(firebase.auth().currentUser);
-      return (
-        <AddProduct/>
-      );
+      var user = firebase.auth().currentUser;
+      var email = user.email;
+      if (email === 'briansmont830@gmail.com') {
+        return (
+          <AddProduct/>
+        );
+      }
     }
   },
   

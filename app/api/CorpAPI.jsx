@@ -5,7 +5,8 @@ module.exports = {
     //Filter by searchText
     filteredProducts = filteredProducts.filter((product) => {
       var item = product.productName.toLowerCase();
-      return searchText.length === 0 || item.indexOf(searchText) > -1;
+      var lowerSearchText = searchText.toLowerCase();
+      return lowerSearchText.length === 0 || item.indexOf(lowerSearchText) > -1;
     });
     
     return filteredProducts;
