@@ -1,5 +1,4 @@
-var uuid = require('node-uuid');
-var moment = require('moment');
+import firebase, {firebaseRef, googleProvider} from 'app/firebase/index';
 
 export var searchTextReducer = (state = '', action) => {
   switch (action.type) {
@@ -55,6 +54,7 @@ export var authReducer = (state = {}, action) => {
     case 'LOGOUT':
       return {};
     default:
+      state.purchases = [];
       return state;
   }
 };

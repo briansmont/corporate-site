@@ -75,7 +75,9 @@ export var startBuyProduct = (productName, productPrice) => {
           productPrice,
           purchasedAt: moment().format('LLLL')
     };
-    var purchaseRef = firebaseRef.child('purchases').push(purchase);
+    var user = firebase.auth().currentUser;
+    var uid = user.uid;
+    var purchaseRef = firebaseRef.child(`users/${uid}/purchases`).push(purchase);
     purchaseRef.then(() => {
       dispatch(buyProduct({
         ...purchase,
@@ -95,9 +97,10 @@ export var getPurchases = (purchases) => {
   };
 };
 
-export var startGetPurchases = () => {
+export var startGetPurchases = (uid) => {
   return (dispatch, getState) => {
-    var purchasesRef = firebaseRef.child('purchases');
+    console.log('uid is here from startGetPurchases:', uid);
+    var purchasesRef = firebaseRef.child(`users/${uid}/purchases`);
     return purchasesRef.once('value').then((snapshot) => {
       var purchases = snapshot.val() || {};
       var parsedPurchases = [];
@@ -126,6 +129,7 @@ export var login = (uid) => {
 export var startLogin = () => {
   return (dispatch, getState) => {
     return firebase.auth().signInWithPopup(googleProvider).then((result) => {
+      dispatch(startGetPurchases(result.user.uid));
       console.log('Auth worked!', result);
     }, (error) => {
       console.log('Unable to auth', error);
