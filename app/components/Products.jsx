@@ -24,7 +24,7 @@ export var Products = React.createClass({
     
     return (
       <div className="comp-pad">
-        <h1 className="page-title"><u>Products</u></h1>
+        <h1 className="page-title">Products</h1>
         <SearchProducts/>
         <ProductList/>
         <div className="column small-centered small-11 medium-6 large-5">

@@ -25,7 +25,6 @@ export var Login = React.createClass({
   render() {
     return (
       <div>
-        <h1 className="page-title">Login</h1>
         
         <div className="row">
           <div className="columns small-centered small-10 medium-6 large-4">

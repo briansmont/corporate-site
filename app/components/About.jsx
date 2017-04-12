@@ -10,7 +10,7 @@ var About = React.createClass({
         <div className="row">
           <img src="/images/philly-skyline-night.jpg" className="small-6 large-12 columns"></img>
         </div>
-        <h1 className="page-title">About Us:</h1>
+        <h1 className="page-title">About Us</h1>
         
         <h4>History</h4>
         <p>The company was founded in Philadelphia, PA in 2017. We exist in Center City East, primarily in Old City & Northern Liberties areas. Our goal is to provide our customers with the best product and customer service possible, to earn their trust and build long lasting relationships.</p>

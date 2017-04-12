@@ -51,7 +51,7 @@ export var Profile = React.createClass({
         <div className="page-actions">
           <a href="/" onClick={this.onLogout}>Sign Out</a>
         </div>
-        <h1 className="page-title">Your Account!</h1>
+        <h1 className="page-title">Your Account</h1>
         {this.renderUserData()}
         <Orders/>
       </div>
