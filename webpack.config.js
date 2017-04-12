@@ -74,7 +74,8 @@ module.exports = {
       CorpAPI: "app/api/CorpAPI.jsx",
       Orders: "app/components/Orders.jsx",
       Order: "app/components/Order.jsx",
-      Login: "app/components/Login.jsx"
+      Login: "app/components/Login.jsx",
+      Footer: "app/components/Footer.jsx"
     },
     extensions: ['', '.js', '.jsx']
   },

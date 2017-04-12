@@ -1,6 +1,6 @@
 var React = require('react');
 import Nav from 'Nav';
-
+import Footer from 'Footer';
 var Main = (props) => {
   return (
     <div>
@@ -10,6 +10,7 @@ var Main = (props) => {
           {props.children}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
