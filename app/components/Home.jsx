@@ -1,5 +1,5 @@
 var React = require('react');
-
+import Footer from 'Footer';
 // const clutter = require("url-loader?limit=10000!../images/capstone/office-clutter.jpeg");
 // const dualMonitor = require("url-loader?limit=10000!../images/capstone/dual-monitor.jpeg");
 // const laptops = require("url-loader?limit=10000!../images/capstone/office-laptops.jpeg");
@@ -34,7 +34,7 @@ var Home = React.createClass({
           <div className="small-4 large-4 columns"><strong>Higher Efficiency</strong></div>
           <div className="small-6 large-4 columns"><strong>Simplify Management</strong></div>
         </div>
-  
+        
       </div>
     );
   }

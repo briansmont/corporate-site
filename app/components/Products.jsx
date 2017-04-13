@@ -4,6 +4,7 @@ import * as Redux from 'react-redux';
 import SearchProducts from 'SearchProducts';
 import ProductList from 'ProductList';
 import AddProduct from 'AddProduct';
+import Footer from 'Footer';
 
 import firebase from 'app/firebase/';
 export var Products = React.createClass({

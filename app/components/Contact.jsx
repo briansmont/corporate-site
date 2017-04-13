@@ -1,5 +1,5 @@
 var React = require('react');
-
+import Footer from 'Footer';
 // <input type='hidden' name='redirect_to' value='http://montcorpsite.herokuapp.com/#/contact' />
 
 var Contact = React.createClass({
@@ -25,8 +25,6 @@ var Contact = React.createClass({
             
           </form>
         </div>
-        
-        
       </div>
     );
   }

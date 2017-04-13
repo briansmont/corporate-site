@@ -1,5 +1,7 @@
 var React = require('react');
 import Orders from 'Orders';
+import Footer from 'Footer';
+
 import * as actions from 'actions';
 import {hashHistory} from 'react-router';
 import * as Redux from 'react-redux';

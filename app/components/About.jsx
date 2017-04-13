@@ -1,5 +1,6 @@
 var React = require('react');
 var {Link} = require('react-router');
+import Footer from 'Footer';
 // const skyline_image = require("url-loader?limit=10000!../images/capstone/philly-skyline-night.jpg");
 
 

@@ -24,9 +24,9 @@ export var Login = React.createClass({
   
   render() {
     return (
-      <div>
+      <div className="bottom-pad">
         
-        <div className="row">
+        <div className="row comp-pad">
           <div className="columns small-centered small-10 medium-6 large-4">
             <div className="callout callout-auth">
               <h3>Login</h3>
@@ -34,6 +34,17 @@ export var Login = React.createClass({
               <button className="button" onClick={this.onLogin}>Login with Google</button>
             </div>
           </div>
+        </div>
+        <div className="bottom-pad center-text">
+          <h4>Once you sign up you can...</h4>
+          <em>
+            <p>Order any items from our catalog!</p>
+            <p>Build your own custom profile!</p>
+            <p>Check out your past orders!</p>
+            <p>See news updates as they unfold!</p>
+            <p>Only you can access your information!</p>
+          </em>
+          <h4>Can't wait to work with you!</h4>
         </div>
       </div>
     );
