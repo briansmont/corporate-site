@@ -24,7 +24,7 @@ export var Login = React.createClass({
   
   render() {
     return (
-      <div className="bottom-pad">
+      <div className="top-pad">
         
         <div className="row comp-pad">
           <div className="columns small-centered small-10 medium-6 large-4">
@@ -35,7 +35,7 @@ export var Login = React.createClass({
             </div>
           </div>
         </div>
-        <div className="bottom-pad center-text">
+        <div className="bottom-pad top-pad center-text">
           <h4>Once you sign up you can...</h4>
           <em>
             <p>Order any items from our catalog!</p>

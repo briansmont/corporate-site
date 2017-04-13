@@ -11,7 +11,7 @@ var Contact = React.createClass({
   
   render: function() {
     return (
-      <div className="comp-pad">
+      <div className="top-pad">
         <div className="small-centered small-11 medium-6 large-5">
           <h1>How can we help?</h1>
           <form action="https://getsimpleform.com/messages?form_api_token=bf9ac70ecd711befee6b55ce8665958c" method="post">
@@ -24,6 +24,9 @@ var Contact = React.createClass({
             <button className="button expanded">Submit!</button>
             
           </form>
+        </div>
+        <div className="large-bottom-pad">
+          <h6 className="center-text">Thanks for reaching out!</h6>
         </div>
       </div>
     );

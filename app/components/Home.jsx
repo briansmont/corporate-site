@@ -24,12 +24,12 @@ var Home = React.createClass({
           </div>
         </div>
         
-        <div className="row comp-pad">
+        <div className="row top-pad">
           <div className="small-2 large-4 columns"><img src="/images/office-clutter.jpeg"></img></div>
           <div className="small-4 large-4 columns"><img src="/images/dual-monitor.jpeg"></img></div>
           <div className="small-6 large-4 columns"><img src="/images/office-laptops.jpeg"></img></div>
         </div>
-        <div className="row comp-pad center-text">
+        <div className="row top-pad center-text">
           <div className="small-2 large-4 columns"><strong>Better Organization</strong></div>
           <div className="small-4 large-4 columns"><strong>Higher Efficiency</strong></div>
           <div className="small-6 large-4 columns"><strong>Simplify Management</strong></div>
