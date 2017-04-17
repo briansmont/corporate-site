@@ -75,7 +75,8 @@ module.exports = {
       Orders: "app/components/Orders.jsx",
       Order: "app/components/Order.jsx",
       Login: "app/components/Login.jsx",
-      Footer: "app/components/Footer.jsx"
+      Footer: "app/components/Footer.jsx",
+      StripeCheckout: "app/components/StripeCheckout.jsx"
     },
     extensions: ['', '.js', '.jsx']
   },

@@ -1,6 +1,9 @@
 var React = require('react');
 var {connect} = require('react-redux');
 var actions = require('actions');
+var {Link} = require('react-router');
+import StripeCheckout from 'react-stripe-checkout';
+import firebase from 'app/firebase/';
 
 var Product = React.createClass({
   
@@ -16,9 +19,27 @@ var Product = React.createClass({
     }
   },
   
+  renderStripe: function(e) {
+    if (firebase.auth().currentUser) {
+      return (
+        <button className="button">Buy Now!</button>
+      );
+    } else {
+      return (
+        <p>Are you signed in?</p>  
+      );
+    }
+  },
+  
+  isSignedIn() {
+    if (!firebase.auth().currentUser) {
+      return <p><Link to="/login">Log In</Link> to purchase!</p>;
+    }
+  },
   
   render: function() {
     var {productName, productPrice, id, addedAt} = this.props;
+    var stripePrice = productPrice * 100;
     
     return (
       <div className="column product-border">
@@ -32,9 +53,18 @@ var Product = React.createClass({
           <p>
             <small>ID:{id}</small>, added: {addedAt}
           </p> 
-          <img src="/images/awesome.jpeg" height="30%" width="30%" alt="product" className="comp-pad"></img>
-          <button className="button">Get it Now!</button> 
+          <button className="button">Get it Now!</button>
         </form>
+        <StripeCheckout
+          onSubmit={this.handleSubmit}
+          name={productName}
+          amount={stripePrice}
+          currency="USD"
+          stripeKey="pk_test_qjxp13XPz4sxrvVqVvVvjPkC"
+          token={this.onToken}>
+          {this.renderStripe()}
+        </StripeCheckout>
+        {this.isSignedIn()}
       </div>
     );
   }
