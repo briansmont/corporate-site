@@ -19,14 +19,14 @@ var Product = React.createClass({
     }
   },
   
-  renderStripe: function(e) {
+  renderBuyButton: function() {
     if (firebase.auth().currentUser) {
       return (
-        <button className="button">Buy Now!</button>
+        <button className="button">Get it Now!</button>
       );
     } else {
       return (
-        <p>Are you signed in?</p>  
+        <p><Link to="/login">Log In</Link> to make purchases!</p> 
       );
     }
   },
@@ -39,7 +39,7 @@ var Product = React.createClass({
   
   render: function() {
     var {productName, productPrice, id, addedAt} = this.props;
-    var stripePrice = productPrice * 100;
+    // var stripePrice = productPrice * 100;
     
     return (
       <div className="column product-border">
@@ -53,18 +53,8 @@ var Product = React.createClass({
           <p>
             <small>ID:{id}</small>, added: {addedAt}
           </p> 
-          <button className="button">Get it Now!</button>
+          {this.renderBuyButton()}
         </form>
-        <StripeCheckout
-          onSubmit={this.handleSubmit}
-          name={productName}
-          amount={stripePrice}
-          currency="USD"
-          stripeKey="pk_test_qjxp13XPz4sxrvVqVvVvjPkC"
-          token={this.onToken}>
-          {this.renderStripe()}
-        </StripeCheckout>
-        {this.isSignedIn()}
       </div>
     );
   }
