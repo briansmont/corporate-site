@@ -2,7 +2,6 @@ var React = require('react');
 var {connect} = require('react-redux');
 var actions = require('actions');
 var {Link} = require('react-router');
-import StripeCheckout from 'react-stripe-checkout';
 import firebase from 'app/firebase/';
 
 var Product = React.createClass({
