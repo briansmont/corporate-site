@@ -22,6 +22,11 @@
   padding-bottom: 15rem;
 }
 @import url(https://fonts.googleapis.com/css?family=Asar);
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
 .content {
-  font-family: 'Asar', serif;
+  font-family: 'Merriweather', serif;
+  h {
+    font-family: 'Asar', serif;
+  }
+  
 }
