@@ -76,7 +76,9 @@ module.exports = {
       Order: "app/components/Order.jsx",
       Login: "app/components/Login.jsx",
       Footer: "app/components/Footer.jsx",
-      StripeCheckout: "app/components/StripeCheckout.jsx"
+      StripeCheckout: "app/components/StripeCheckout.jsx",
+      NewsAPI: "app/api/NewsAPI.jsx",
+      News: "app/components/News.jsx"
     },
     extensions: ['', '.js', '.jsx']
   },

@@ -1,6 +1,8 @@
 var React = require('react');
 import Orders from 'Orders';
-import Footer from 'Footer';
+var NewsAPI = require('NewsAPI');
+// var News = require('News');
+
 
 import * as actions from 'actions';
 import {hashHistory} from 'react-router';
@@ -29,8 +31,21 @@ export var Profile = React.createClass({
     } else {
       return <p>No User Data Available</p>;
     }
-    
-    
+  },
+  renderNews: function() {
+    var newsObject = NewsAPI.getBBCNews();
+    console.log(newsObject);
+    var title = newsObject.title;
+    console.log(title);
+    return (
+      <div>
+        <h5>What's new?</h5>
+        <h6>{newsObject.heading}</h6>
+        <div className="row">
+          <span className="desc">{newsObject.desc}</span>{newsObject.url}
+        </div>
+      </div>
+    );
     
   },
   
@@ -55,6 +70,7 @@ export var Profile = React.createClass({
         </div>
         <h1 className="page-title">Your Account</h1>
         {this.renderUserData()}
+        {this.renderNews()}
         <Orders/>
       </div>
     );
