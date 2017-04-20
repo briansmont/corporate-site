@@ -18,7 +18,7 @@ module.exports = {
         newsObject.desc = response.description;
         newsObject.url = response.url;
         
-        
+        console.log(newsObject.title);
         
       }
     });

@@ -35,7 +35,7 @@ export var Profile = React.createClass({
   renderNews: function() {
     var newsObject = NewsAPI.getBBCNews();
     console.log(newsObject);
-    var title = newsObject.title;
+    var title = (newsObject.title);
     console.log(title);
     return (
       <div>
