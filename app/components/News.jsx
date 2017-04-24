@@ -98,6 +98,7 @@ var News = React.createClass({
   showCNBC: function() {
     document.getElementById("cnbc-heading").innerHTML = cnbcObject.title;
     document.getElementById("cnbc-description").innerHTML = cnbcObject.desc;
+    document.getElementById("cnbc-more").innerHTML = "See more at" + <a href="www.cnbc.com" target="_blank">CNBC</a>;
   },
   showHacker: function() {
     document.getElementById("hacker-heading").innerHTML = hackerObject.title;
@@ -134,6 +135,7 @@ var News = React.createClass({
           <div className="row">
             <div id="bbc-heading" className="heading"></div>
             <div id="bbc-description" className="desc"></div>
+            <p>See more at <a href="www.bbc.com" target="_blank">BBC</a></p>
           </div>
         </div>
         
@@ -144,6 +146,7 @@ var News = React.createClass({
           <div className="row">
             <div id="espn-heading" className="heading"></div>
             <div id="espn-description" className="desc"></div>
+            <p>See more at <a href="www.espn.com" target="_blank">ESPN</a></p>
           </div>
         </div>
         
@@ -154,6 +157,7 @@ var News = React.createClass({
           <div className="row">
             <div id="cnbc-heading" className="heading"></div>
             <div id="cnbc-description" className="desc"></div>
+            <p id="cnbc-more">See more at <a href="www.cnbc.com" target="_blank">CNBC</a></p>
           </div>
         </div>
         
@@ -164,6 +168,7 @@ var News = React.createClass({
           <div className="row">
             <div id="hacker-heading" className="heading"></div>
             <div id="hacker-description" className="desc"></div>
+            
           </div>
         </div>
         
