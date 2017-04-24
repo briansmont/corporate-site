@@ -1,6 +1,6 @@
 import React from 'react';
 import {hashHistory, Route, Router, IndexRoute} from 'react-router';
-
+import News from 'News';
 import About from 'About';
 import Products from 'Products';
 import Contact from 'Contact';
@@ -29,6 +29,7 @@ export default (
       <Route path="/about" component={About}/>
       <Route path="/products" component={Products}/>
       <Route path="/contact" component={Contact}/>
+      <Route path="/news" component={News}/>
       <Route path="/profile" component={Profile} onEnter={requireLogin}/>
       <Route path="/login" component={Login} onEnter={redirectIfLoggedIn}/>
       <IndexRoute component={Home}/>
