@@ -130,12 +130,28 @@ var News = React.createClass({
     e.preventDefault();
     document.getElementById("hacker-heading").innerHTML = hackerObject.title;
     document.getElementById("hacker-description").innerHTML = hackerObject.desc;
+    document.getElementById("hacker-more").className = "unhidden";
   },
+  hideHacker: function(e) {
+    e.preventDefault();
+    document.getElementById("hacker-heading").innerHTML = '';
+    document.getElementById("hacker-description").innerHTML = '';
+    document.getElementById("hacker-more").className = "hidden";
+  },
+  
   showAP: function(e) {
     e.preventDefault();
     document.getElementById("ap-heading").innerHTML = apObject.title;
     document.getElementById("ap-description").innerHTML = apObject.desc;
+    document.getElementById("ap-more").className = "unhidden";
   },
+  hideAP: function(e) {
+    e.preventDefault();
+    document.getElementById("ap-heading").innerHTML = '';
+    document.getElementById("ap-description").innerHTML = '';
+    document.getElementById("ap-more").className = "hidden";
+  },
+  
   showBreit: function(e) {
     e.preventDefault();
     document.getElementById("breit-heading").innerHTML = breitObject.title;
@@ -160,7 +176,7 @@ var News = React.createClass({
         
         <div id="bbc">
           <div className="row">
-            <div className="small-1 large-1 columns"><h3>BBC</h3></div>
+            <div className="small-1 large-1 columns"><h4>BBC</h4></div>
             <div className="small-1 large-1 columns">
               <form onSubmit={this.showBBC}>
                 <button className="button hollow">Expand</button>
@@ -182,7 +198,7 @@ var News = React.createClass({
         
         <div id="espn">
           <div className="row">
-            <div className="small-1 large-1 columns"><h3>ESPN</h3></div>
+            <div className="small-1 large-1 columns"><h4>ESPN</h4></div>
             <div className="small-1 large-1 columns">
               <form onSubmit={this.showESPN}>
                 <button className="button hollow">Expand</button>
@@ -204,7 +220,7 @@ var News = React.createClass({
         
         <div id="cnbc">
           <div className="row">
-            <div className="small-1 large-1 columns"><h3>CNBC</h3></div>
+            <div className="small-1 large-1 columns"><h4>CNBC</h4></div>
             <div className="small-1 large-1 columns">
               <form onSubmit={this.showCNBC}>
                 <button className="button hollow">Expand</button>
@@ -225,23 +241,46 @@ var News = React.createClass({
         </div>
         
         <div id="hacker">
-          <form onSubmit={this.showHacker}>
-            <button className="button hollow">Show ABC!</button>
-          </form>
+          <div className="row">
+            <div className="small-1 large-1 columns"><h4>Hacker</h4></div>
+            <div className="small-1 large-1 columns">
+              <form onSubmit={this.showHacker}>
+                <button className="button hollow">Expand</button>
+              </form>
+            </div>
+            <div className="small-1 large-1 columns">
+              <form onSubmit={this.hideHacker}>
+                <button className="button hollow">Hide</button>
+              </form>
+            </div>
+            <div className="small-9 large-9 columns"></div>
+          </div>
           <div className="row">
             <div id="hacker-heading" className="heading"></div>
             <div id="hacker-description" className="desc"></div>
-            
+            <p id="hacker-more" className="hidden">See more at <a href="https://news.ycombinator.com/" target="_blank">Hacker-News</a></p>
           </div>
         </div>
         
         <div id="ap">
-          <form onSubmit={this.showAP}>
-            <button className="button hollow">Show Associated Press!</button>
-          </form>
+          <div className="row">
+            <div className="small-1 large-1 columns"><h3>A.P.</h3></div>
+            <div className="small-1 large-1 columns">
+              <form onSubmit={this.showAP}>
+                <button className="button hollow">Expand</button>
+              </form>
+            </div>
+            <div className="small-1 large-1 columns">
+              <form onSubmit={this.hideAP}>
+                <button className="button hollow">Hide</button>
+              </form>
+            </div>
+            <div className="small-9 large-9 columns"></div>
+          </div>
           <div className="row">
             <div id="ap-heading" className="heading"></div>
             <div id="ap-description" className="desc"></div>
+            <p id="ap-more" className="hidden">See more at <a href="https://www.ap.org/en-us/" target="_blank">Associated Press</a></p>
           </div>
         </div>
         
