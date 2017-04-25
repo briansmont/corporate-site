@@ -156,11 +156,26 @@ var News = React.createClass({
     e.preventDefault();
     document.getElementById("breit-heading").innerHTML = breitObject.title;
     document.getElementById("breit-description").innerHTML = breitObject.desc;
+    document.getElementById("breit-more").className = "unhidden";
   },
+  hideBreit: function(e) {
+    e.preventDefault();
+    document.getElementById("breit-heading").innerHTML = '';
+    document.getElementById("breit-description").innerHTML = '';
+    document.getElementById("breit-more").className = "hidden";
+  },
+  
   showAljaz: function(e) {
     e.preventDefault();
     document.getElementById("aljaz-heading").innerHTML = alJazObject.title;
     document.getElementById("aljaz-description").innerHTML = alJazObject.desc;
+    document.getElementById("aljaz-more").className = "unhidden";
+  },
+  hideAljaz: function(e) {
+    e.preventDefault();
+    document.getElementById("aljaz-heading").innerHTML = '';
+    document.getElementById("aljaz-description").innerHTML = '';
+    document.getElementById("aljaz-more").className = "hidden";
   },
   
   
@@ -285,27 +300,48 @@ var News = React.createClass({
         </div>
         
         <div id="breit">
-          <form onSubmit={this.showBreit}>
-            <button className="button hollow">Show Breitbart News!</button>
-          </form>
+          <div className="row">
+            <div className="small-1 large-1 columns"><h3>Breit</h3></div>
+            <div className="small-1 large-1 columns">
+              <form onSubmit={this.showBreit}>
+                <button className="button hollow">Expand</button>
+              </form>
+            </div>
+            <div className="small-1 large-1 columns">
+              <form onSubmit={this.hideBreit}>
+                <button className="button hollow">Hide</button>
+              </form>
+            </div>
+            <div className="small-9 large-9 columns"></div>
+          </div>
           <div className="row">
             <div id="breit-heading" className="heading"></div>
             <div id="breit-description" className="desc"></div>
+            <p id="breit-more" className="hidden">See more at <a href="https://www.breitbart.com/" target="_blank">Breitbart News</a></p>
           </div>
         </div>
         
         <div id="aljaz">
-          <form onSubmit={this.showAljaz}>
-            <button className="button hollow">Show Al Jazeera News!</button>
-          </form>
+          <div className="row">
+            <div className="small-1 large-1 columns"><h3>AlJaz</h3></div>
+            <div className="small-1 large-1 columns">
+              <form onSubmit={this.showAljaz}>
+                <button className="button hollow">Expand</button>
+              </form>
+            </div>
+            <div className="small-1 large-1 columns">
+              <form onSubmit={this.hideAljaz}>
+                <button className="button hollow">Hide</button>
+              </form>
+            </div>
+            <div className="small-9 large-9 columns"></div>
+          </div>
           <div className="row">
             <div id="aljaz-heading" className="heading"></div>
             <div id="aljaz-description" className="desc"></div>
+            <p id="aljaz-more" className="hidden">See more at <a href="https://www.aljazeera.com/" target="_blank">Breitbart News</a></p>
           </div>
         </div>
-        
-        
-        
       </div>
     );
   }  
