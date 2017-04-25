@@ -104,13 +104,28 @@ var News = React.createClass({
     e.preventDefault();
     document.getElementById("espn-heading").innerHTML = espnObject.title;
     document.getElementById("espn-description").innerHTML = espnObject.desc;
+    document.getElementById("espn-more").className= "unhidden";
   },
+  hideESPN: function(e) {
+    e.preventDefault();
+    document.getElementById("espn-heading").innerHTML = '';
+    document.getElementById("espn-description").innerHTML = '';
+    document.getElementById("espn-more").className = "hidden";
+  },
+  
   showCNBC: function(e) {
     e.preventDefault();
     document.getElementById("cnbc-heading").innerHTML = cnbcObject.title;
     document.getElementById("cnbc-description").innerHTML = cnbcObject.desc;
     document.getElementById("cnbc-more").className = "unhidden";
   },
+  hideCNBC: function(e) {
+    e.preventDefault();
+    document.getElementById("cnbc-heading").innerHTML = '';
+    document.getElementById("cnbc-description").innerHTML = '';
+    document.getElementById("cnbc-more").className = "hidden";
+  },
+  
   showHacker: function(e) {
     e.preventDefault();
     document.getElementById("hacker-heading").innerHTML = hackerObject.title;
@@ -145,7 +160,7 @@ var News = React.createClass({
         
         <div id="bbc">
           <div className="row">
-            <div className="small-1 large-1 columns"><h4>BBC</h4></div>
+            <div className="small-1 large-1 columns"><h3>BBC</h3></div>
             <div className="small-1 large-1 columns">
               <form onSubmit={this.showBBC}>
                 <button className="button hollow">Expand</button>
@@ -166,20 +181,42 @@ var News = React.createClass({
         </div>
         
         <div id="espn">
-          <form onSubmit={this.showESPN}>
-            <button className="button hollow">Show ESPN!</button>
-          </form>
+          <div className="row">
+            <div className="small-1 large-1 columns"><h3>ESPN</h3></div>
+            <div className="small-1 large-1 columns">
+              <form onSubmit={this.showESPN}>
+                <button className="button hollow">Expand</button>
+              </form>
+            </div>
+            <div className="small-1 large-1 columns">
+              <form onSubmit={this.hideESPN}>
+                <button className="button hollow">Hide</button>
+              </form>
+            </div>
+            <div className="small-9 large-9 columns"></div>
+          </div>
           <div className="row">
             <div id="espn-heading" className="heading"></div>
             <div id="espn-description" className="desc"></div>
-            <p>See more at <a href="https://www.espn.com" target="_blank">ESPN</a></p>
+            <p id="espn-more" className="hidden">See more at <a href="https://www.espn.com" target="_blank">ESPN</a></p>
           </div>
         </div>
         
         <div id="cnbc">
-          <form onSubmit={this.showCNBC}>
-            <button className="button hollow">Show CNBC!</button>
-          </form>
+          <div className="row">
+            <div className="small-1 large-1 columns"><h3>CNBC</h3></div>
+            <div className="small-1 large-1 columns">
+              <form onSubmit={this.showCNBC}>
+                <button className="button hollow">Expand</button>
+              </form>
+            </div>
+            <div className="small-1 large-1 columns">
+              <form onSubmit={this.hideCNBC}>
+                <button className="button hollow">Hide</button>
+              </form>
+            </div>
+            <div className="small-9 large-9 columns"></div>
+          </div>
           <div className="row">
             <div id="cnbc-heading" className="heading"></div>
             <div id="cnbc-description" className="desc"></div>
