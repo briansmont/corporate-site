@@ -91,7 +91,15 @@ var News = React.createClass({
     e.preventDefault();
     document.getElementById("bbc-heading").innerHTML = bbcObject.title;
     document.getElementById("bbc-description").innerHTML = bbcObject.desc;
+    document.getElementById("bbc-more").className = "unhidden";
   },
+  hideBBC: function(e) {
+    e.preventDefault();
+    document.getElementById("bbc-heading").innerHTML = '';
+    document.getElementById("bbc-description").innerHTML = '';
+    document.getElementById("bbc-more").className = "hidden";
+  },
+  
   showESPN: function(e) {
     e.preventDefault();
     document.getElementById("espn-heading").innerHTML = espnObject.title;
@@ -101,7 +109,7 @@ var News = React.createClass({
     e.preventDefault();
     document.getElementById("cnbc-heading").innerHTML = cnbcObject.title;
     document.getElementById("cnbc-description").innerHTML = cnbcObject.desc;
-    document.getElementById("cnbc-more").innerHTML = "See more at" + <a href="https://www.cnbc.com" target="_blank">CNBC</a>;
+    document.getElementById("cnbc-more").className = "unhidden";
   },
   showHacker: function(e) {
     e.preventDefault();
@@ -132,17 +140,28 @@ var News = React.createClass({
   render: function() {
     return (
       <div>
-        <h1>Check out what's happening now!</h1>
+        <h1>Check out what's happening now.</h1>
         {this.getNews()}
         
         <div id="bbc">
-          <form onSubmit={this.showBBC}>
-            <button className="button hollow">Show BBC!</button>
-          </form>
+          <div className="row">
+            <div className="small-1 large-1 columns"><h4>BBC</h4></div>
+            <div className="small-1 large-1 columns">
+              <form onSubmit={this.showBBC}>
+                <button className="button hollow">Expand</button>
+              </form>
+            </div>
+            <div className="small-1 large-1 columns">
+              <form onSubmit={this.hideBBC}>
+                <button className="button hollow">Hide</button>
+              </form>
+            </div>
+            <div className="small-9 large-9 columns"></div>
+          </div>
           <div className="row">
             <div id="bbc-heading" className="heading"></div>
             <div id="bbc-description" className="desc"></div>
-            <p>See more at <a href="https://www.bbc.com" target="_blank">BBC</a></p>
+            <p id="bbc-more" className="hidden">See more at <a href="https://www.bbc.com" target="_blank">BBC</a></p>
           </div>
         </div>
         
@@ -164,7 +183,7 @@ var News = React.createClass({
           <div className="row">
             <div id="cnbc-heading" className="heading"></div>
             <div id="cnbc-description" className="desc"></div>
-            <p id="cnbc-more"></p>
+            <p id="cnbc-more" className="hidden">See more at <a href="https://www.cnbc.com" target="_blank">CNBC</a></p>
           </div>
         </div>
         

@@ -25,8 +25,12 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather);
 .content {
   font-family: 'Merriweather', serif;
-  h {
-    font-family: 'Asar', serif;
-  }
-  
 }
+
+.hidden {
+  visibility: hidden;
+}
+.unhidden {
+  visibility: visible;
+}
+

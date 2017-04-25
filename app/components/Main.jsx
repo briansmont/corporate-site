@@ -3,10 +3,10 @@ import Nav from 'Nav';
 import Footer from 'Footer';
 var Main = (props) => {
   return (
-    <div>
+    <div className="content">
       <Nav/>
       <div className="row">
-        <div className="content">
+        <div>
           {props.children}
         </div>
       </div>
