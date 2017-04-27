@@ -185,161 +185,163 @@ var News = React.createClass({
   
   render: function() {
     return (
-      <div>
-        <h1>Check out what's happening now.</h1>
-        {this.getNews()}
-        
-        <div id="bbc">
-          <div className="row">
-            <div className="small-1 large-1 columns"><h4>BBC</h4></div>
-            <div className="small-1 large-1 columns">
-              <form onSubmit={this.showBBC}>
-                <button className="button hollow">Expand</button>
-              </form>
+      <div className="news-back">
+        <h1 className="page-title">What's New?</h1>
+        <div>
+          {this.getNews()}
+          
+          <div id="bbc" className="comp-pad">
+            <div className="row">
+              <div className="small-1 large-1 columns"><h4>BBC</h4></div>
+              <div className="small-1 large-1 columns">
+                <form onSubmit={this.showBBC}>
+                  <button className="button hollow">Expand</button>
+                </form>
+              </div>
+              <div className="small-1 large-1 columns">
+                <form onSubmit={this.hideBBC}>
+                  <button className="button hollow">Hide</button>
+                </form>
+              </div>
+              <div className="small-9 large-9 columns"></div>
             </div>
-            <div className="small-1 large-1 columns">
-              <form onSubmit={this.hideBBC}>
-                <button className="button hollow">Hide</button>
-              </form>
+            <div className="row bottom-border margin-left">
+              <div id="bbc-heading" className="heading"></div>
+              <div id="bbc-description" className="desc"></div>
+              <p id="bbc-more" className="hidden">See more at <a href="https://www.bbc.com" target="_blank">BBC</a></p>
             </div>
-            <div className="small-9 large-9 columns"></div>
           </div>
-          <div className="row">
-            <div id="bbc-heading" className="heading"></div>
-            <div id="bbc-description" className="desc"></div>
-            <p id="bbc-more" className="hidden">See more at <a href="https://www.bbc.com" target="_blank">BBC</a></p>
-          </div>
-        </div>
-        
-        <div id="espn">
-          <div className="row">
-            <div className="small-1 large-1 columns"><h4>ESPN</h4></div>
-            <div className="small-1 large-1 columns">
-              <form onSubmit={this.showESPN}>
-                <button className="button hollow">Expand</button>
-              </form>
+          
+          <div id="espn" className="comp-pad">
+            <div className="row">
+              <div className="small-1 large-1 columns"><h4>ESPN</h4></div>
+              <div className="small-1 large-1 columns">
+                <form onSubmit={this.showESPN}>
+                  <button className="button hollow">Expand</button>
+                </form>
+              </div>
+              <div className="small-1 large-1 columns">
+                <form onSubmit={this.hideESPN}>
+                  <button className="button hollow">Hide</button>
+                </form>
+              </div>
+              <div className="small-9 large-9 columns"></div>
             </div>
-            <div className="small-1 large-1 columns">
-              <form onSubmit={this.hideESPN}>
-                <button className="button hollow">Hide</button>
-              </form>
+            <div className="row bottom-border margin-left">
+              <div id="espn-heading" className="heading"></div>
+              <div id="espn-description" className="desc"></div>
+              <p id="espn-more" className="hidden">See more at <a href="https://www.espn.com" target="_blank">ESPN</a></p>
             </div>
-            <div className="small-9 large-9 columns"></div>
           </div>
-          <div className="row">
-            <div id="espn-heading" className="heading"></div>
-            <div id="espn-description" className="desc"></div>
-            <p id="espn-more" className="hidden">See more at <a href="https://www.espn.com" target="_blank">ESPN</a></p>
-          </div>
-        </div>
-        
-        <div id="cnbc">
-          <div className="row">
-            <div className="small-1 large-1 columns"><h4>CNBC</h4></div>
-            <div className="small-1 large-1 columns">
-              <form onSubmit={this.showCNBC}>
-                <button className="button hollow">Expand</button>
-              </form>
+          
+          <div id="cnbc" className="comp-pad">
+            <div className="row">
+              <div className="small-1 large-1 columns"><h4>CNBC</h4></div>
+              <div className="small-1 large-1 columns">
+                <form onSubmit={this.showCNBC}>
+                  <button className="button hollow">Expand</button>
+                </form>
+              </div>
+              <div className="small-1 large-1 columns">
+                <form onSubmit={this.hideCNBC}>
+                  <button className="button hollow">Hide</button>
+                </form>
+              </div>
+              <div className="small-9 large-9 columns"></div>
             </div>
-            <div className="small-1 large-1 columns">
-              <form onSubmit={this.hideCNBC}>
-                <button className="button hollow">Hide</button>
-              </form>
+            <div className="row bottom-border margin-left">
+              <div id="cnbc-heading" className="heading"></div>
+              <div id="cnbc-description" className="desc"></div>
+              <p id="cnbc-more" className="hidden">See more at <a href="https://www.cnbc.com" target="_blank">CNBC</a></p>
             </div>
-            <div className="small-9 large-9 columns"></div>
           </div>
-          <div className="row">
-            <div id="cnbc-heading" className="heading"></div>
-            <div id="cnbc-description" className="desc"></div>
-            <p id="cnbc-more" className="hidden">See more at <a href="https://www.cnbc.com" target="_blank">CNBC</a></p>
-          </div>
-        </div>
-        
-        <div id="hacker">
-          <div className="row">
-            <div className="small-1 large-1 columns"><h4>Hacker</h4></div>
-            <div className="small-1 large-1 columns">
-              <form onSubmit={this.showHacker}>
-                <button className="button hollow">Expand</button>
-              </form>
+          
+          <div id="hacker" className="comp-pad">
+            <div className="row">
+              <div className="small-1 large-1 columns"><h4>Hacker</h4></div>
+              <div className="small-1 large-1 columns">
+                <form onSubmit={this.showHacker}>
+                  <button className="button hollow">Expand</button>
+                </form>
+              </div>
+              <div className="small-1 large-1 columns">
+                <form onSubmit={this.hideHacker}>
+                  <button className="button hollow">Hide</button>
+                </form>
+              </div>
+              <div className="small-9 large-9 columns"></div>
             </div>
-            <div className="small-1 large-1 columns">
-              <form onSubmit={this.hideHacker}>
-                <button className="button hollow">Hide</button>
-              </form>
+            <div className="row bottom-border margin-left">
+              <div id="hacker-heading" className="heading"></div>
+              <div id="hacker-description" className="desc"></div>
+              <p id="hacker-more" className="hidden">See more at <a href="https://news.ycombinator.com/" target="_blank">Hacker-News</a></p>
             </div>
-            <div className="small-9 large-9 columns"></div>
           </div>
-          <div className="row">
-            <div id="hacker-heading" className="heading"></div>
-            <div id="hacker-description" className="desc"></div>
-            <p id="hacker-more" className="hidden">See more at <a href="https://news.ycombinator.com/" target="_blank">Hacker-News</a></p>
-          </div>
-        </div>
-        
-        <div id="ap">
-          <div className="row">
-            <div className="small-1 large-1 columns"><h3>A.P.</h3></div>
-            <div className="small-1 large-1 columns">
-              <form onSubmit={this.showAP}>
-                <button className="button hollow">Expand</button>
-              </form>
+          
+          <div id="ap" className="comp-pad">
+            <div className="row">
+              <div className="small-1 large-1 columns"><h4>A.P.</h4></div>
+              <div className="small-1 large-1 columns">
+                <form onSubmit={this.showAP}>
+                  <button className="button hollow">Expand</button>
+                </form>
+              </div>
+              <div className="small-1 large-1 columns">
+                <form onSubmit={this.hideAP}>
+                  <button className="button hollow">Hide</button>
+                </form>
+              </div>
+              <div className="small-9 large-9 columns"></div>
             </div>
-            <div className="small-1 large-1 columns">
-              <form onSubmit={this.hideAP}>
-                <button className="button hollow">Hide</button>
-              </form>
+            <div className="row bottom-border margin-left">
+              <div id="ap-heading" className="heading"></div>
+              <div id="ap-description" className="desc"></div>
+              <p id="ap-more" className="hidden">See more at <a href="https://www.ap.org/en-us/" target="_blank">Associated Press</a></p>
             </div>
-            <div className="small-9 large-9 columns"></div>
           </div>
-          <div className="row">
-            <div id="ap-heading" className="heading"></div>
-            <div id="ap-description" className="desc"></div>
-            <p id="ap-more" className="hidden">See more at <a href="https://www.ap.org/en-us/" target="_blank">Associated Press</a></p>
-          </div>
-        </div>
-        
-        <div id="breit">
-          <div className="row">
-            <div className="small-1 large-1 columns"><h3>Breit</h3></div>
-            <div className="small-1 large-1 columns">
-              <form onSubmit={this.showBreit}>
-                <button className="button hollow">Expand</button>
-              </form>
+          
+          <div id="breit" className="comp-pad">
+            <div className="row">
+              <div className="small-1 large-1 columns"><h4>Breit</h4></div>
+              <div className="small-1 large-1 columns">
+                <form onSubmit={this.showBreit}>
+                  <button className="button hollow">Expand</button>
+                </form>
+              </div>
+              <div className="small-1 large-1 columns">
+                <form onSubmit={this.hideBreit}>
+                  <button className="button hollow">Hide</button>
+                </form>
+              </div>
+              <div className="small-9 large-9 columns"></div>
             </div>
-            <div className="small-1 large-1 columns">
-              <form onSubmit={this.hideBreit}>
-                <button className="button hollow">Hide</button>
-              </form>
+            <div className="row bottom-border margin-left">
+              <div id="breit-heading" className="heading"></div>
+              <div id="breit-description" className="desc"></div>
+              <p id="breit-more" className="hidden">See more at <a href="https://www.breitbart.com/" target="_blank">Breitbart News</a></p>
             </div>
-            <div className="small-9 large-9 columns"></div>
           </div>
-          <div className="row">
-            <div id="breit-heading" className="heading"></div>
-            <div id="breit-description" className="desc"></div>
-            <p id="breit-more" className="hidden">See more at <a href="https://www.breitbart.com/" target="_blank">Breitbart News</a></p>
-          </div>
-        </div>
-        
-        <div id="aljaz">
-          <div className="row">
-            <div className="small-1 large-1 columns"><h3>AlJaz</h3></div>
-            <div className="small-1 large-1 columns">
-              <form onSubmit={this.showAljaz}>
-                <button className="button hollow">Expand</button>
-              </form>
+          
+          <div id="aljaz" className="comp-pad">
+            <div className="row">
+              <div className="small-1 large-1 columns"><h4>AlJaz</h4></div>
+              <div className="small-1 large-1 columns">
+                <form onSubmit={this.showAljaz}>
+                  <button className="button hollow">Expand</button>
+                </form>
+              </div>
+              <div className="small-1 large-1 columns">
+                <form onSubmit={this.hideAljaz}>
+                  <button className="button hollow">Hide</button>
+                </form>
+              </div>
+              <div className="small-9 large-9 columns"></div>
             </div>
-            <div className="small-1 large-1 columns">
-              <form onSubmit={this.hideAljaz}>
-                <button className="button hollow">Hide</button>
-              </form>
+            <div className="row bottom-border margin-left">
+              <div id="aljaz-heading" className="heading"></div>
+              <div id="aljaz-description" className="desc"></div>
+              <p id="aljaz-more" className="hidden">See more at <a href="https://www.aljazeera.com/" target="_blank">Breitbart News</a></p>
             </div>
-            <div className="small-9 large-9 columns"></div>
-          </div>
-          <div className="row">
-            <div id="aljaz-heading" className="heading"></div>
-            <div id="aljaz-description" className="desc"></div>
-            <p id="aljaz-more" className="hidden">See more at <a href="https://www.aljazeera.com/" target="_blank">Breitbart News</a></p>
           </div>
         </div>
       </div>
