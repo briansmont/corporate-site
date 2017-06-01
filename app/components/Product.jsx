@@ -41,7 +41,7 @@ var Product = React.createClass({
     // var stripePrice = productPrice * 100;
     
     return (
-      <div className="column">
+      <div className="column product-border">
         <form onSubmit={this.handleSubmit}>
           <input type="hidden" ref="id" value={id}/>
           <input type="hidden" ref="productName" value={productName}/>
