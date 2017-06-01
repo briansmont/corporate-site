@@ -41,16 +41,16 @@ var Product = React.createClass({
     // var stripePrice = productPrice * 100;
     
     return (
-      <div className="column product-border">
+      <div className="column">
         <form onSubmit={this.handleSubmit}>
+          <input type="hidden" ref="id" value={id}/>
           <input type="hidden" ref="productName" value={productName}/>
           <input type="hidden" ref="productPrice" value={productPrice}/>
-          <p>
-            <strong>{productName}:</strong> for 
-            ${productPrice}
+          <p className="center-text">
+            <strong>{productName}:</strong> : <strong>${productPrice}</strong>
           </p>
           <p>
-            <small>ID:{id}</small>, added: {addedAt}
+            Listed at: {addedAt}
           </p> 
           {this.renderBuyButton()}
         </form>
